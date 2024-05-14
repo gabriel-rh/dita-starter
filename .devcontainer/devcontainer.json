@@ -1,0 +1,16 @@
+{
+    "image":"mcr.microsoft.com/devcontainers/universal:2",
+    "postCreateCommand": "python3 -m http.server -d output/",
+    "customizations": {
+      "vscode": {
+        "settings": {
+          "search.followSymlinks": false,
+          "workbench.editor.enablePreview": false
+        },
+        "extensions": [
+            "asciidoctor.asciidoctor-vscode",
+            "redhat.vscode-xml"
+        ]
+      }
+    }
+  }

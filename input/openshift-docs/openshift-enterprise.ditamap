@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+
+<map>
+
+    <title>OCP map</title>
+
+    <topicref href="welcome/index.dita" />
+    <topicref href="welcome/about-hcp.dita" />
+    <topicref href="rosa_architecture/rosa-understanding.dita" />
+
+</map>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+
+<concept id="about-hcp">
+
+<title>Learn more about ROSA with HCP</title>
+
+<conbody>
+
+<p>Red Hat OpenShift Service on AWS (ROSA) with hosted control planes (HCP) offers a reduced-cost solution to create a managed ROSA cluster with a focus on efficiency. You can quickly create a new cluster and deploy applications in minutes.</p>
+
+<section>
+<title>Key features of ROSA with HCP</title>
+
+
+<ul>
+    <li>ROSA with HCP requires a minimum of only two nodes, making it ideal for smaller projects while still being able to scale to support larger projects and enterprises.</li>
+
+    <li>The underlying control plane infrastructure is fully managed. Control plane components, such as the API server and etcd database, are hosted in a Red Hat-owned AWS account.</li>
+    
+    <li>Provisioning time is approximately 10 minutes.</li>
+    
+    <li>Customers can upgrade the control plane and machine pools separately, which means they do not have to shut down the entire cluster during upgrades.</li>
+
+</ul>
+</section>
+
+
+<section>
+<title>Getting started with ROSA with HCP</title>
+
+</section>
+</conbody>
+
+</concept>

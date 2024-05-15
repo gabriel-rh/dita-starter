@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+
+<concept id="rosa-understanding">
+
+<title>Understanding ROSA</title>
+
+<conbody>
+
+<p>Learn about Red Hat OpenShift Service on AWS (ROSA), interacting with ROSA using Red Hat OpenShift Cluster Manager and command-line interface (CLI) tools, consumption experience, and integration with Amazon Web Services (AWS) services.
+
+</p>
+
+</conbody>
+</concept>

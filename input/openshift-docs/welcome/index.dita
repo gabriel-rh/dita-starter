@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+
+<concept id="welcome-index">
+
+<title>Red Hat OpenShift Service on AWS Documentation</title>
+
+<conbody>
+
+<p>Welcome to the official Red Hat OpenShift Service on AWS (ROSA) documentation, where you can learn about ROSA and start exploring its features. To learn about ROSA, interacting with ROSA by using Red Hat OpenShift Cluster Manager and command-line interface (CLI) tools, consumption experience, and integration with Amazon Web Services (AWS) services, start with the Introduction to ROSA documentation.</p>
+
+<fig>
+<title>Red Hat OpenShift Service on AWS Documentation</title>
+<image href="../images/291_OpenShift_on_AWS_Intro_1122_docs.png" align="center"/>
+</fig>
+
+<p>To navigate the ROSA documentation, use the left navigation bar.</p>
+</conbody>
+
+</concept>

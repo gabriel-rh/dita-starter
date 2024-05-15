@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+
+<map>
+
+    <keydef keys="product-title">
+        <topicmeta>
+            <keywords>
+                <keyword>Red Hat OpenShift Service on AWS</keyword>
+            </keywords>
+        </topicmeta>
+    </keydef>
+
+    <!-- :cluster-manager-first: Red Hat OpenShift Cluster Manager -->
+
+    <keydef keys="cluster-manager-first">
+        <topicmeta>
+            <keywords>
+                <keyword>Red Hat OpenShift Cluster Manager</keyword>
+            </keywords>
+        </topicmeta>
+    </keydef>   
+
+</map>

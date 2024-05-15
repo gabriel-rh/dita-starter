@@ -5,6 +5,8 @@
 
     <title>OCP map</title>
 
+    <mapref href="common-attributes.ditamap" />
+
     <mapref href="welcome/welcome.ditamap" />
 
     <topicref href="rosa_architecture/rosa_architecture.ditamap" format="ditamap"/>

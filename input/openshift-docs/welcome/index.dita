@@ -10,7 +10,7 @@
 
 <conbody>
 
-<p>Welcome to the official <keyword keyref="product-title"/> (ROSA) documentation, where you can learn about ROSA and start exploring its features. To learn about ROSA, interacting with ROSA by using <keyword href="cluster-manager-first"/> and command-line interface (CLI) tools, consumption experience, and integration with Amazon Web Services (AWS) services, start with the Introduction to ROSA documentation.</p>
+<p>Welcome to the official <keyword keyref="product-title"/> (ROSA) documentation, where you can learn about ROSA and start exploring its features. To learn about ROSA, interacting with ROSA by using <keyword keyref="cluster-manager-first"/> and command-line interface (CLI) tools, consumption experience, and integration with Amazon Web Services (AWS) services, start with the Introduction to ROSA documentation.</p>
 
 <fig>
 <title><keyword keyref="product-title"/> Documentation</title>

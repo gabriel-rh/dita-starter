@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+
+<map>
+
+    <title>Welcome map</title>
+
+    <topicref navtitle="About">
+        <topicref href="index.dita" />
+        <topicref href="about-hcp.dita" />
+    </topicref>
+
+</map>

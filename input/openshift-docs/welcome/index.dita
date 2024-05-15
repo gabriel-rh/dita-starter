@@ -4,6 +4,9 @@
 <concept id="welcome-index">
 
 <title>Red Hat OpenShift Service on AWS Documentation</title>
+<titlealts>
+<navtitle>Welcome</navtitle>
+</titlealts>
 
 <conbody>
 

@@ -14,5 +14,9 @@ docker run --rm -v /workspaces/dita-starter:/src ghcr.io/dita-ot/dita-ot:4.2.3 -
 
 
 ```
+docker run --rm -v /workspaces/dita-starter:/src ghcr.io/dita-ot/dita-ot:4.2.3 -i /src/input/openshift-docs/openshift-enterprise-modular.ditamap -o /src/output/rosa -f html5 -v --nav-toc=full
+```
+
+```
 python3 -m http.server -d output/
 ```

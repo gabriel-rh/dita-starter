@@ -10,11 +10,14 @@
 
 <conbody>
 
-<p>Welcome to the official <keyword keyref="product-title"/> (ROSA) documentation, where you can learn about ROSA and start exploring its features. To learn about ROSA, interacting with ROSA by using <keyword keyref="cluster-manager-first"/> and command-line interface (CLI) tools, consumption experience, and integration with Amazon Web Services (AWS) services, start with the Introduction to ROSA documentation.</p>
+<p>Welcome to the official <keyword keyref="product-title"/> (ROSA) documentation, where you can learn about ROSA and start exploring its features. To learn about ROSA, interacting with ROSA by using <keyword keyref="cluster-manager-first"/> and command-line interface (CLI) tools, consumption experience, and integration with Amazon Web Services (AWS) services, start with <xref keyref="rosa-understanding"/>.</p>
 
+
+<!--  xref:../rosa_architecture/rosa-understanding.adoc#rosa-understanding[the Introduction to ROSA documentation].
+-->
 <fig>
 <title><keyword keyref="product-title"/> Documentation</title>
-<image href="../images/291_OpenShift_on_AWS_Intro_1122_docs.png" align="center"/>
+<image keyref="img_openshift-rosa-intro" align="center"/>
 </fig>
 
 <p>To navigate the ROSA documentation, use the left navigation bar.</p>

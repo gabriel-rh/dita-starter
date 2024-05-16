@@ -8,7 +8,7 @@
 
     <topicref navtitle="Introduction to ROSA">
 
-        <topicref href="rosa-understanding.dita"/>
+        <topicref href="rosa-understanding.dita" keys="rosa-understanding"/>
 
         <!--<topicref href="rosa-understanding.dita" locktitle="yes">
             <topicmeta><navtitle>Dummy title</navtitle></topicmeta>

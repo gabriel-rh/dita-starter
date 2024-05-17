@@ -29,11 +29,96 @@
 <section>
 <title>Getting started with ROSA with HCP</title>
 
+<p>Use the following sections to find content to help you learn about and use ROSA with HCP.</p>
+
+<!-- 
+		
+
+
+
+
+
+
+
+
+
+
+
+
+-->
+
+<!-- 
+<simpletable><sthead><stentry>hhh</stentry></sthead><strow><stentry>ddddd</stentry></strow></simpletable>
+-->
+
+<table frame="all" rowsep="1" colsep="1">
+<title>Architecture links</title>
+<tgroup cols="3">
+<thead>
+    <row>
+        <entry>Learn about ROSA with HCP</entry>
+        <entry>Plan ROSA with HCP deployment</entry>
+        <entry>Additional resources</entry>
+    </row>
+</thead>
+<tbody>
+    <row>
+        <entry>Architecture overview</entry>
+        <entry>Back up and restore</entry>
+        <entry>ROSA with HCP life cycle</entry>        
+    </row>
+    <row>
+        <entry>ROSA with HCP architecture</entry>
+        <entry></entry>
+        <entry>ROSA with HCP service definition</entry>        
+    </row>
+    <row>
+        <entry></entry>
+        <entry></entry>
+        <entry>Getting support</entry>        
+    </row>
+</tbody>
+</tgroup>
+
+</table>
+
+
+<table frame="all" rowsep="1" colsep="1">
+    <tgroup cols="3">
+    <colspec colname="col_1" colwidth="33.3333*"/>
+    <colspec colname="col_2" colwidth="33.3333*"/>
+    <colspec colname="col_3" colwidth="33.3334*"/>
+    <thead>
+    <row>
+    <entry align="left" valign="top">Learn about {hcp-title}</entry>
+    <entry align="left" valign="top">Plan {hcp-title} deployment</entry>
+    <entry align="left" valign="top">Additional resources</entry>
+    </row>
+    </thead>
+    <tbody>
+    <row>
+    <entry align="left" valign="top">Architecture overview</entry>
+    <entry align="left" valign="top">Back up and restore</entry>
+    <entry align="left" valign="top">{hcp-title} life cycle</entry>
+    </row>
+    <row>
+    <entry align="left" valign="top">{hcp-title} architecture</entry>
+    <entry align="left" valign="top"></entry>
+    <entry align="left" valign="top">{hcp-title} service definition</entry>
+    </row>
+    <row>
+    <entry align="left" valign="top"></entry>
+    <entry align="left" valign="top"></entry>
+    <entry align="left" valign="top">Getting support</entry>
+    </row>
+    </tbody>
+    </tgroup>
+    </table>
 <!-- link:https://learn.openshift.com/?extIdCarryOver=true&sc_cid=701f2000001Css5AAC[OpenShift Interactive Learning Portal]-->
 
-<p>
-    <xref scope="external" format="html" href="https://learn.openshift.com/?extIdCarryOver=true&amp;sc_cid=701f2000001Css5AAC">OpenShift Interactive Learning Portal</xref></p>
-    
+<!--<p>
+    <xref scope="external" format="html" href="https://learn.openshift.com/?extIdCarryOver=true&amp;sc_cid=701f2000001Css5AAC">OpenShift Interactive Learning Portal</xref></p>-->
+
 </section>
 </conbody>
 

@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?asciidoc-toc?>
+<?asciidoc-numbered?>
+<article xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" version="5.0" xml:lang="en" xml:id="about-hcp">
+<info>
+<title>Learn more about ROSA with HCP</title>
+<date>Unresolved directive in about-hcp.adoc - include</date>
+<author>
+<personname>
+<firstname>Unresolved directive in about-hcp.adoc - include::_attributes/common-attributes.adoc[]</firstname>
+</personname>
+</author>
+<authorinitials>U</authorinitials>
+<revhistory>
+<revision>
+<date>Unresolved directive in about-hcp.adoc - include</date>
+<authorinitials>U</authorinitials>
+<revremark>:_attributes/attributes-openshift-dedicated.adoc[]</revremark>
+</revision>
+</revhistory>
+</info>
+
+<simpara>{hcp-title-first} offers a reduced-cost solution to create a managed ROSA cluster with a focus on efficiency. You can quickly create a new cluster and deploy applications in minutes.</simpara>
+<section xml:id="_key_features_of_hcp_title">
+<title>Key features of {hcp-title}</title>
+<itemizedlist>
+<listitem>
+<simpara>{hcp-title} requires a minimum of only two nodes, making it ideal for smaller projects while still being able to scale to support larger projects and enterprises.</simpara>
+</listitem>
+<listitem>
+<simpara>The underlying control plane infrastructure is fully managed. Control plane components, such as the API server and etcd database, are hosted in a Red Hat-owned AWS account.</simpara>
+</listitem>
+<listitem>
+<simpara>Provisioning time is approximately 10 minutes.</simpara>
+</listitem>
+<listitem>
+<simpara>Customers can upgrade the control plane and machine pools separately, which means they do not have to shut down the entire cluster during upgrades.</simpara>
+</listitem>
+</itemizedlist>
+</section>
+<section xml:id="_getting_started_with_hcp_title">
+<title>Getting started with {hcp-title}</title>
+<simpara>Use the following sections to find content to help you learn about and use {hcp-title}.</simpara>
+<section xml:id="architect">
+<title>Architect</title>
+<table frame="all" rowsep="1" colsep="1">
+<tgroup cols="3">
+<colspec colname="col_1" colwidth="33.3333*"/>
+<colspec colname="col_2" colwidth="33.3333*"/>
+<colspec colname="col_3" colwidth="33.3334*"/>
+<thead>
+<row>
+<entry align="left" valign="top">Learn about {hcp-title}</entry>
+<entry align="left" valign="top">Plan {hcp-title} deployment</entry>
+<entry align="left" valign="top">Additional resources</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry align="left" valign="top"><simpara><link xl:href="../architecture/index.xml#architecture-overview">Architecture overview</link></simpara></entry>
+<entry align="left" valign="top"><simpara><link xl:href="../rosa_backing_up_and_restoring_applications/backing-up-applications.xml#rosa-backing-up-applications">Back up and restore</link></simpara></entry>
+<entry align="left" valign="top"><simpara><link xl:href="../rosa_architecture/rosa_policy_service_definition/rosa-hcp-life-cycle.xml#rosa-hcp-life-cycle">{hcp-title} life cycle</link></simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara><link xl:href="../architecture/rosa-architecture-models.xml#rosa-architecture-models">{hcp-title} architecture</link></simpara></entry>
+<entry align="left" valign="top"></entry>
+<entry align="left" valign="top"><simpara><link xl:href="../rosa_architecture/rosa_policy_service_definition/rosa-hcp-service-definition.xml#rosa-hcp-service-definition">{hcp-title} service definition</link></simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"></entry>
+<entry align="left" valign="top"></entry>
+<entry align="left" valign="top"><simpara><link xl:href="../support/index.xml#support-overview">Getting support</link></simpara></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</section>
+<section xml:id="cluster-administrator">
+<title>Cluster Administrator</title>
+<informaltable frame="all" rowsep="1" colsep="1">
+<tgroup cols="4">
+<colspec colname="col_1" colwidth="25*"/>
+<colspec colname="col_2" colwidth="25*"/>
+<colspec colname="col_3" colwidth="25*"/>
+<colspec colname="col_4" colwidth="25*"/>
+<thead>
+<row>
+<entry align="left" valign="top">Learn about {hcp-title}</entry>
+<entry align="left" valign="top">Deploy {hcp-title}</entry>
+<entry align="left" valign="top">Manage {hcp-title}</entry>
+<entry align="left" valign="top">Additional resources</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry align="left" valign="top"><simpara><link xl:href="../architecture/rosa-architecture-models.xml#rosa-architecture-models">{hcp-title} architecture</link></simpara></entry>
+<entry align="left" valign="top"><simpara><link xl:href="../rosa_hcp/rosa-hcp-sts-creating-a-cluster-quickly.xml#rosa-hcp-sts-creating-a-cluster-quickly">Installing {hcp-title}</link></simpara></entry>
+<entry align="left" valign="top"><simpara><link xl:href="../observability/logging/cluster-logging.xml#cluster-logging">Logging</link></simpara></entry>
+<entry align="left" valign="top"><simpara><link xl:href="../support/index.xml#support-overview">Getting Support</link></simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara><link xl:href="https://learn.openshift.com/?extIdCarryOver=true&amp;sc_cid=701f2000001Css5AAC">OpenShift Interactive Learning Portal</link></simpara></entry>
+<entry align="left" valign="top"><simpara><link xl:href="../storage/index.xml#storage-overview">Storage</link></simpara></entry>
+<entry align="left" valign="top"><simpara><link xl:href="../observability/monitoring/monitoring-overview.xml#monitoring-overview_virt-monitoring-overview">Monitoring overview</link></simpara></entry>
+<entry align="left" valign="top"><simpara><link xl:href="../rosa_architecture/rosa_policy_service_definition/rosa-hcp-life-cycle.xml#rosa-hcp-life-cycle">{hcp-title} life cycle</link></simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"></entry>
+<entry align="left" valign="top"><simpara><link xl:href="../rosa_backing_up_and_restoring_applications/backing-up-applications.xml#rosa-backing-up-applications">Back up and restore</link></simpara></entry>
+<entry align="left" valign="top"></entry>
+<entry align="left" valign="top"></entry>
+</row>
+<row>
+<entry align="left" valign="top"></entry>
+<entry align="left" valign="top"><simpara><link xl:href="../upgrading/rosa-hcp-upgrading.xml#rosa-hcp-upgrading">Upgrading</link></simpara></entry>
+<entry align="left" valign="top"></entry>
+<entry align="left" valign="top"></entry>
+</row>
+</tbody>
+</tgroup>
+</informaltable>
+</section>
+<section xml:id="Developer">
+<title>Developer</title>
+<informaltable frame="all" rowsep="1" colsep="1">
+<tgroup cols="3">
+<colspec colname="col_1" colwidth="33.3333*"/>
+<colspec colname="col_2" colwidth="33.3333*"/>
+<colspec colname="col_3" colwidth="33.3334*"/>
+<thead>
+<row>
+<entry align="left" valign="top">Learn about application development in {hcp-title}</entry>
+<entry align="left" valign="top">Deploy applications</entry>
+<entry align="left" valign="top">Additional resources</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry align="left" valign="top"><simpara><link xl:href="https://developers.redhat.com/">Red Hat Developers site</link></simpara></entry>
+<entry align="left" valign="top"><simpara><link xl:href="../applications/index.xml#building-applications-overview">Building applications overview</link></simpara></entry>
+<entry align="left" valign="top"><simpara><link xl:href="../support/index.xml#support-overview">Getting support</link></simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara><link xl:href="https://developers.redhat.com/products/openshift-dev-spaces/overview">{openshift-dev-spaces-productname} (formerly Red Hat CodeReady Workspaces)</link></simpara></entry>
+<entry align="left" valign="top"><simpara><link xl:href="../operators/index.xml#operators-overview">Operators overview</link></simpara></entry>
+<entry align="left" valign="top"></entry>
+</row>
+<row>
+<entry align="left" valign="top"></entry>
+<entry align="left" valign="top"><simpara><link xl:href="../openshift_images/index.xml#overview-of-images">Images</link></simpara></entry>
+<entry align="left" valign="top"></entry>
+</row>
+<row>
+<entry align="left" valign="top"></entry>
+<entry align="left" valign="top"><simpara><link xl:href="../cli_reference/odo-important-update.xml#odo-important_update">Developer-focused CLI</link></simpara></entry>
+<entry align="left" valign="top"></entry>
+</row>
+</tbody>
+</tgroup>
+</informaltable>
+</section>
+</section>
+</article>

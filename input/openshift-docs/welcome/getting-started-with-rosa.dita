@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+
+<concept id="getting-started-with-rosa">
+    <title>Getting started with ROSA with HCP</title>
+
+    <conbody>
+        <p>Use the following sections to find content to help you learn about and use ROSA with HCP.</p>
+
+        <section><title>Architect</title>
+        
+        <table frame="all" rowsep="1" colsep="1">
+        <title>Architecture links</title>
+        <tgroup cols="3">
+        <thead>
+            <row>
+                <entry>Learn about ROSA with HCP</entry>
+                <entry>Plan ROSA with HCP deployment</entry>
+                <entry>Additional resources</entry>
+            </row>
+        </thead>
+        <tbody>
+            <row>
+                <entry>Architecture overview</entry>
+                <entry>Back up and restore</entry>
+                <entry>ROSA with HCP life cycle</entry>        
+            </row>
+            <row>
+                <entry>ROSA with HCP architecture</entry>
+                <entry></entry>
+                <entry>ROSA with HCP service definition</entry>        
+            </row>
+            <row>
+                <entry></entry>
+                <entry></entry>
+                <entry>Getting support</entry>        
+            </row>
+        </tbody>
+        </tgroup>
+        
+        </table>
+        
+        
+        </section>
+
+    </conbody>
+
+
+</concept>

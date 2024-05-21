@@ -6,13 +6,13 @@ Copyright 2016 Jarno Elovirta
 See the accompanying LICENSE file for applicable license.
 --><project xmlns:dita="http://dita-ot.sourceforge.net" xmlns:if="ant:if" xmlns:unless="ant:unless" name="ditaot-preprocess2">
 
-  <target name="preprocess2" depends="preprocess2.init,ditaval-merge,preprocess2.maps,preprocess2.topics,map-clean-map,clean-preprocess,copy-files2,preprocess2.post,com.elovirta.pdf.generate"/>
+  <target name="preprocess2" depends="prismjs.init,preprocess2.init,ditaval-merge,preprocess2.maps,preprocess2.topics,map-clean-map,clean-preprocess,copy-files2,preprocess2.post,extend.css,com.elovirta.pdf.generate,prismjs"/>
 
   <target name="preprocess2.maps" depends="map-reader,                   map-mapref,                   map-reader-profile,                   map-branch-filter,                   map-keyref,                   map-conrefpush,                   map-conref,                   map-profile"/>
 
   <target name="preprocess2.topics" description="Map-first preprocessing topic steps" depends="topic-reader,                   topic-branch-filter,                   topic-map-conref,                   topic-keyref,                   topic-copy-to,                   topic-conrefpush,                   topic-conref,                   topic-profile,                   preprocess2.topic-fragment,                   topic-chunk,                   topic-move-meta-entries,                   topic-maplink,                   topic-topicpull"/>
 
-  <target name="preprocess2-topic" description="Map-first preprocess for topic input" depends="preprocess2.init,ditaval-merge,topic-reader,topic-conrefpush,topic-conref,topic-profile,preprocess2.topic-fragment,topic-move-meta-entries,topic-topicpull,clean-preprocess,copy-files2,com.elovirta.pdf.generate"/>
+  <target name="preprocess2-topic" description="Map-first preprocess for topic input" depends="prismjs.init,preprocess2.init,ditaval-merge,topic-reader,topic-conrefpush,topic-conref,topic-profile,preprocess2.topic-fragment,topic-move-meta-entries,topic-topicpull,clean-preprocess,copy-files2,extend.css,com.elovirta.pdf.generate,prismjs"/>
   
   <target name="preprocess2.init" description="Initialize map-first preprocessing">
     <dita-ot-fail id="DOTA002F">

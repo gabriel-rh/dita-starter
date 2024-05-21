@@ -15,7 +15,7 @@ See the accompanying LICENSE file for applicable license.
     </and>
   </condition>
 
-  <target name="preprocess" depends="preprocess.init,ditaval-merge,gen-list,debug-filter,mapref,branch-filter,keyref,copy-to,conrefpush,conref,profile,topic-fragment,chunk,move-meta-entries,maplink,topicpull,clean-map,clean-preprocess,copy-files,com.elovirta.pdf.generate"/>
+  <target name="preprocess" depends="prismjs.init,preprocess.init,ditaval-merge,gen-list,debug-filter,mapref,branch-filter,keyref,copy-to,conrefpush,conref,profile,topic-fragment,chunk,move-meta-entries,maplink,topicpull,clean-map,clean-preprocess,copy-files,extend.css,com.elovirta.pdf.generate,prismjs"/>
   
   <target name="preprocess.init">
     <dita-ot-fail id="DOTA002F">

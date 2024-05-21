@@ -1,0 +1,25 @@
+$ POLICY_ARN=$(aws iam list-policies --query "Policies[?PolicyName=='RosaCloudWatch'].{ARN:Arn}" --output text)
+$ if [[ -z "${POLICY_ARN}" ]]; then
+cat << EOF > ${SCRATCH}/policy.json
+{
+  "Version": "2012-10-17",
+  "Statement": [
+     {
+           "Effect": "Allow",
+           "Action": [
+              "logs:CreateLogGroup",
+              "logs:CreateLogStream",
+              "logs:DescribeLogGroups",
+              "logs:DescribeLogStreams",
+              "logs:PutLogEvents",
+              "logs:PutRetentionPolicy"
+           ],
+           "Resource": "arn:aws:logs:*:*:*"
+     }
+]
+}
+EOF
+POLICY_ARN=$(aws iam create-policy --policy-name "RosaCloudWatch" \
+--policy-document file:///${SCRATCH}/policy.json --query Policy.Arn --output text)
+fi
+$ echo ${POLICY_ARN}

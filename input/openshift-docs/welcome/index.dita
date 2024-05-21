@@ -12,6 +12,84 @@
 
 <p>Welcome to the official <keyword keyref="product-title"/> (ROSA) documentation, where you can learn about ROSA and start exploring its features. To learn about ROSA, interacting with ROSA by using <keyword keyref="cluster-manager-first"/> and command-line interface (CLI) tools, consumption experience, and integration with Amazon Web Services (AWS) services, start with <xref keyref="rosa-understanding"/>.</p>
 
+<fig><title>test.js</title>
+<codeblock outputclass="language-javascript">let i=1;
+i++;
+</codeblock>
+</fig>
+
+
+<codeblock  outputclass="language-bash">$ export ROSA_CLUSTER_NAME=$(oc get infrastructure cluster -o=jsonpath="{.status.infrastructureName}"  | sed 's/-[a-z0-9]\{5\}$//')
+$ export REGION=$(rosa describe cluster -c ${ROSA_CLUSTER_NAME} --output json | jq -r .region.id)
+$ export OIDC_ENDPOINT=$(oc get authentication.config.openshift.io cluster -o json | jq -r .spec.serviceAccountIssuer | sed  's|^https://||')
+$ export AWS_ACCOUNT_ID=`aws sts get-caller-identity --query Account --output text`
+$ export AWS_PAGER=""
+$ export SCRATCH="/tmp/${ROSA_CLUSTER_NAME}/clf-cloudwatch-sts"
+$ mkdir -p ${SCRATCH}
+</codeblock>
+
+<codeblock   outputclass="language-json">{
+    "logGroups": [
+        {
+            "logGroupName": "rosa-xxxx.audit",
+            "creationTime": 1661286368369,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-2:xxxx:log-group:rosa-xxxx.audit:*",
+            "storedBytes": 0
+        },
+        {
+            "logGroupName": "rosa-xxxx.infrastructure",
+            "creationTime": 1661286369821,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-2:xxxx:log-group:rosa-xxxx.infrastructure:*",
+            "storedBytes": 0
+        }
+    ]
+}
+</codeblock>
+
+
+
+<codeblock  outputclass="language-bash">$ POLICY_ARN=$(aws iam list-policies --query "Policies[?PolicyName=='RosaCloudWatch'].{ARN:Arn}" --output text)
+$ if [[ -z "${POLICY_ARN}" ]]; then
+cat &lt;&lt; EOF > ${SCRATCH}/policy.json
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "logs:CreateLogGroup",
+                "logs:CreateLogStream",
+                "logs:DescribeLogGroups",
+                "logs:DescribeLogStreams",
+                "logs:PutLogEvents",
+                "logs:PutRetentionPolicy"
+            ],
+            "Resource": "arn:aws:logs:*:*:*"
+        }
+    ]
+}
+EOF
+POLICY_ARN=$(aws iam create-policy --policy-name "RosaCloudWatch" \
+--policy-document file:///${SCRATCH}/policy.json --query Policy.Arn --output text)
+fi
+$ echo ${POLICY_ARN}    
+</codeblock>
+
+<codeblock  outputclass="language-bash">
+<coderef href="../code/policy.txt"/>
+</codeblock>
+
+
+<codeblock  outputclass="language-json">
+<coderef scope="external" href="https://raw.githubusercontent.com/openshift/installer/release-4.15/upi/azure/02_storage.json"/>
+</codeblock>
+
+<codeblock>name: <data name="co" value="1"/></codeblock>
+<ol>
+    <li>the mame is used for....</li>
+</ol>
 
 <!--  xref:../rosa_architecture/rosa-understanding.adoc#rosa-understanding[the Introduction to ROSA documentation].
 -->

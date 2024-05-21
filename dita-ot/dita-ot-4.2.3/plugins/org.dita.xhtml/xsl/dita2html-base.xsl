@@ -46,13 +46,13 @@ See the accompanying LICENSE file for applicable license.
 <!-- Integrate support for flagging with dita-ot pseudo-domain -->
 <xsl:import href="plugin:org.dita.xhtml:xsl/xslhtml/htmlflag.xsl"/>  
 
-
+<xsl:import xmlns:dita="http://dita-ot.sourceforge.net" href="plugin:fox.jason.extend.css:xsl/xhtml.xsl"/><xsl:import href="plugin:fox.jason.prismjs:xsl/line-numbers.xsl"/>
 
 <!-- the dita to xhtml converter for element reference documents - not used now -->
 <!--<xsl:import href="elementrefdisp.xsl"/>-->
 
 <!-- root rule -->
-<xsl:template xmlns:dita="http://dita-ot.sourceforge.net" match="/">
+<xsl:template match="/">
   <xsl:apply-templates/>
 </xsl:template>
 

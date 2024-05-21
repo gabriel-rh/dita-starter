@@ -2,6 +2,7 @@
 CLASSPATH="$CLASSPATH:$DITA_HOME/plugins/org.dita.htmlhelp/lib/htmlhelp.jar"
 CLASSPATH="$CLASSPATH:$DITA_HOME/plugins/org.dita.pdf2/lib/fo.jar"
 CLASSPATH="$CLASSPATH:$DITA_HOME/plugins/com.elovirta.pdf/lib/pdf-generator-0.7.2.jar"
+CLASSPATH="$CLASSPATH:$DITA_HOME/plugins/fox.jason.prismjs/lib/prismjs-1.5.jar"
 CLASSPATH="$CLASSPATH:$DITA_HOME/plugins/org.dita.eclipsehelp/lib/eclipsehelp.jar"
 CLASSPATH="$CLASSPATH:$DITA_HOME/plugins/org.dita.index/lib/index.jar"
 CLASSPATH="$CLASSPATH:$DITA_HOME/plugins/org.dita.pdf2.axf/lib/axf.jar"

@@ -28,7 +28,7 @@ $ export SCRATCH="/tmp/${ROSA_CLUSTER_NAME}/clf-cloudwatch-sts"
 $ mkdir -p ${SCRATCH}
 </codeblock>
 
-<codeblock   outputclass="language-json">{
+<codeblock   outputclass="language-json show-line-numbers">{
     "logGroups": [
         {
             "logGroupName": "rosa-xxxx.audit",

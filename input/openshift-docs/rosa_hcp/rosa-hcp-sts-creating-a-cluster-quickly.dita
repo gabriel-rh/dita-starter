@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="rosa-hcp-sts-creating-a-cluster-quickly">
+
+<title>Creating ROSA with HCP clusters using the default options </title>
+
+<conbody>
+
+<note>If you are looking for a quickstart guide for ROSA Classic, see Red Hat OpenShift Service on AWS quickstart guide.</note>
+
+
+<p>Red Hat OpenShift Service on AWS (ROSA) with hosted control planes (HCP) offers a more efficient and reliable architecture for creating Red Hat OpenShift Service on AWS (ROSA) clusters. With ROSA with HCP, each cluster has a dedicated control plane that is isolated in a ROSA service account.</p>
+
+<p>Create a ROSA with HCP cluster quickly by using the default options and automatic AWS Identity and Access Management (IAM) resource creation. You can deploy your cluster by using the ROSA CLI (<codeph>rosa</codeph>).</p>
+</conbody>
+
+
+
+</concept>

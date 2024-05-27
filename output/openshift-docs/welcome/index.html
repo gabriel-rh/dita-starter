@@ -1,0 +1,125 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en"><head><meta charset="UTF-8"><meta name="copyright" content="(C) Copyright 2024"><meta name="generator" content="DITA-OT"><title>Red Hat OpenShift Service on AWS Documentation</title><link rel="stylesheet" type="text/css" href="../commonltr.css">
+<link rel="stylesheet" type="text/css" href="../common-extended.css"></head><body id="welcome-index"><nav class="toc" role="navigation"><ul><li><span>About</span><ul><li class="active"><a href="../welcome/index.html">Welcome</a></li><li><a href="../welcome/about-hcp.html#about-hcp">Learn more about ROSA with HCP</a><ul></ul></li></ul></li><li><span>Introduction to ROSA</span><ul><li><a href="../rosa_architecture/rosa-understanding.html">Understanding ROSA</a></li></ul></li></ul></nav><main role="main"><article role="article" aria-labelledby="ariaid-title1">
+
+<h1 class="title topictitle1" id="ariaid-title1"><span class="keyword">Red Hat OpenShift Service on AWS</span> Documentation</h1>
+
+
+<div class="body conbody">
+
+<p class="p">Welcome to the official <span class="keyword">Red Hat OpenShift Service on AWS</span> (ROSA) documentation, where you can learn about ROSA and start exploring its features. To learn about ROSA, interacting with ROSA by using <span class="keyword">Red Hat OpenShift Cluster Manager</span> and command-line interface (CLI) tools, consumption experience, and integration with Amazon Web Services (AWS) services, start with <a class="xref" href="../rosa_architecture/rosa-understanding.html">Understanding ROSA</a>.</p>
+
+<figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 1. </span>test.js</figcaption>
+<pre class="pre codeblock language-javascript"><code><span class="ph token keyword">let</span> i<span class="ph token operator">=</span><span class="ph token number">1</span><span class="ph token punctuation">;</span>
+i<span class="ph token operator">++</span><span class="ph token punctuation">;</span>
+</code></pre>
+</figure>
+
+
+<pre class="pre codeblock language-bash"><code>$ <span class="ph token builtin class-name">export</span> <span class="ph token assign-left variable">ROSA_CLUSTER_NAME</span><span class="ph token operator">=</span><span class="ph token variable"><span class="ph token variable">$(</span>oc get infrastructure cluster -o<span class="ph token operator">=</span>jsonpath<span class="ph token operator">=</span><span class="ph token string">"{.status.infrastructureName}"</span>  <span class="ph token operator">|</span> <span class="ph token function">sed</span> <span class="ph token string">'s/-[a-z0-9]\{5\}$//'</span><span class="ph token variable">)</span></span>
+$ <span class="ph token builtin class-name">export</span> <span class="ph token assign-left variable">REGION</span><span class="ph token operator">=</span><span class="ph token variable"><span class="ph token variable">$(</span>rosa describe cluster -c $<span class="ph token punctuation">{</span>ROSA_CLUSTER_NAME<span class="ph token punctuation">}</span> --output json <span class="ph token operator">|</span> jq -r .region.id<span class="ph token variable">)</span></span>
+$ <span class="ph token builtin class-name">export</span> <span class="ph token assign-left variable">OIDC_ENDPOINT</span><span class="ph token operator">=</span><span class="ph token variable"><span class="ph token variable">$(</span>oc get authentication.config.openshift.io cluster -o json <span class="ph token operator">|</span> jq -r .spec.serviceAccountIssuer <span class="ph token operator">|</span> <span class="ph token function">sed</span>  <span class="ph token string">'s|^https://||'</span><span class="ph token variable">)</span></span>
+$ <span class="ph token builtin class-name">export</span> <span class="ph token assign-left variable">AWS_ACCOUNT_ID</span><span class="ph token operator">=</span><span class="ph token variable"><span class="ph token variable">`</span>aws sts get-caller-identity --query Account --output text<span class="ph token variable">`</span></span>
+$ <span class="ph token builtin class-name">export</span> <span class="ph token assign-left variable">AWS_PAGER</span><span class="ph token operator">=</span><span class="ph token string">""</span>
+$ <span class="ph token builtin class-name">export</span> <span class="ph token assign-left variable">SCRATCH</span><span class="ph token operator">=</span><span class="ph token string">"/tmp/<span class="ph token variable">${ROSA_CLUSTER_NAME}</span>/clf-cloudwatch-sts"</span>
+$ <span class="ph token function">mkdir</span> -p <span class="ph token variable">${SCRATCH}</span>
+</code></pre>
+
+<pre class="pre codeblock language-json show-line-numbers"><code><span class="line-numbers-rows"></span><span class="ph token punctuation">{</span>
+<span class="line-numbers-rows"></span>    <span class="ph token property">"logGroups"</span><span class="ph token operator">:</span> <span class="ph token punctuation">[</span>
+<span class="line-numbers-rows"></span>        <span class="ph token punctuation">{</span>
+<span class="line-numbers-rows"></span>            <span class="ph token property">"logGroupName"</span><span class="ph token operator">:</span> <span class="ph token string">"rosa-xxxx.audit"</span><span class="ph token punctuation">,</span>
+<span class="line-numbers-rows"></span>            <span class="ph token property">"creationTime"</span><span class="ph token operator">:</span> <span class="ph token number">1661286368369</span><span class="ph token punctuation">,</span>
+<span class="line-numbers-rows"></span>            <span class="ph token property">"metricFilterCount"</span><span class="ph token operator">:</span> <span class="ph token number">0</span><span class="ph token punctuation">,</span>
+<span class="line-numbers-rows"></span>            <span class="ph token property">"arn"</span><span class="ph token operator">:</span> <span class="ph token string">"arn:aws:logs:us-east-2:xxxx:log-group:rosa-xxxx.audit:*"</span><span class="ph token punctuation">,</span>
+<span class="line-numbers-rows"></span>            <span class="ph token property">"storedBytes"</span><span class="ph token operator">:</span> <span class="ph token number">0</span>
+<span class="line-numbers-rows"></span>        <span class="ph token punctuation">}</span><span class="ph token punctuation">,</span>
+<span class="line-numbers-rows"></span>        <span class="ph token punctuation">{</span>
+<span class="line-numbers-rows"></span>            <span class="ph token property">"logGroupName"</span><span class="ph token operator">:</span> <span class="ph token string">"rosa-xxxx.infrastructure"</span><span class="ph token punctuation">,</span>
+<span class="line-numbers-rows"></span>            <span class="ph token property">"creationTime"</span><span class="ph token operator">:</span> <span class="ph token number">1661286369821</span><span class="ph token punctuation">,</span>
+<span class="line-numbers-rows"></span>            <span class="ph token property">"metricFilterCount"</span><span class="ph token operator">:</span> <span class="ph token number">0</span><span class="ph token punctuation">,</span>
+<span class="line-numbers-rows"></span>            <span class="ph token property">"arn"</span><span class="ph token operator">:</span> <span class="ph token string">"arn:aws:logs:us-east-2:xxxx:log-group:rosa-xxxx.infrastructure:*"</span><span class="ph token punctuation">,</span>
+<span class="line-numbers-rows"></span>            <span class="ph token property">"storedBytes"</span><span class="ph token operator">:</span> <span class="ph token number">0</span>
+<span class="line-numbers-rows"></span>        <span class="ph token punctuation">}</span>
+<span class="line-numbers-rows"></span>    <span class="ph token punctuation">]</span>
+<span class="line-numbers-rows"></span><span class="ph token punctuation">}</span>
+<span class="line-numbers-rows"></span></code></pre>
+
+
+
+<pre class="pre codeblock language-bash"><code>$ <span class="ph token assign-left variable">POLICY_ARN</span><span class="ph token operator">=</span><span class="ph token variable"><span class="ph token variable">$(</span>aws iam list-policies --query <span class="ph token string">"Policies[?PolicyName=='RosaCloudWatch'].{ARN:Arn}"</span> --output text<span class="ph token variable">)</span></span>
+$ <span class="ph token keyword">if</span> <span class="ph token punctuation">[</span><span class="ph token punctuation">[</span> -z <span class="ph token string">"<span class="ph token variable">${POLICY_ARN}</span>"</span> <span class="ph token punctuation">]</span><span class="ph token punctuation">]</span><span class="ph token punctuation">;</span> <span class="ph token keyword">then</span>
+<span class="ph token function">cat</span> <span class="ph token operator">&lt;&lt;</span> EOF <span class="ph token operator">&gt;</span> <span class="ph token variable">${SCRATCH}</span>/policy.json
+<span class="ph token punctuation">{</span>
+    <span class="ph token string">"Version"</span><span class="ph token builtin class-name">:</span> <span class="ph token string">"2012-10-17"</span>,
+    <span class="ph token string">"Statement"</span><span class="ph token builtin class-name">:</span> <span class="ph token punctuation">[</span>
+        <span class="ph token punctuation">{</span>
+            <span class="ph token string">"Effect"</span><span class="ph token builtin class-name">:</span> <span class="ph token string">"Allow"</span>,
+            <span class="ph token string">"Action"</span><span class="ph token builtin class-name">:</span> <span class="ph token punctuation">[</span>
+                <span class="ph token string">"logs:CreateLogGroup"</span>,
+                <span class="ph token string">"logs:CreateLogStream"</span>,
+                <span class="ph token string">"logs:DescribeLogGroups"</span>,
+                <span class="ph token string">"logs:DescribeLogStreams"</span>,
+                <span class="ph token string">"logs:PutLogEvents"</span>,
+                <span class="ph token string">"logs:PutRetentionPolicy"</span>
+            <span class="ph token punctuation">]</span>,
+            <span class="ph token string">"Resource"</span><span class="ph token builtin class-name">:</span> <span class="ph token string">"arn:aws:logs:*:*:*"</span>
+        <span class="ph token punctuation">}</span>
+    <span class="ph token punctuation">]</span>
+<span class="ph token punctuation">}</span>
+EOF
+<span class="ph token assign-left variable">POLICY_ARN</span><span class="ph token operator">=</span><span class="ph token variable"><span class="ph token variable">$(</span>aws iam create-policy --policy-name <span class="ph token string">"RosaCloudWatch"</span> <span class="ph token punctuation">\</span>
+--policy-document file:///$<span class="ph token punctuation">{</span>SCRATCH<span class="ph token punctuation">}</span>/policy.json --query Policy.Arn --output text<span class="ph token variable">)</span></span>
+<span class="ph token keyword">fi</span>
+$ <span class="ph token builtin class-name">echo</span> <span class="ph token variable">${POLICY_ARN}</span>    
+</code></pre>
+
+<pre class="pre codeblock language-bash"><code>
+$ <span class="ph token assign-left variable">POLICY_ARN</span><span class="ph token operator">=</span><span class="ph token variable"><span class="ph token variable">$(</span>aws iam list-policies --query <span class="ph token string">"Policies[?PolicyName=='RosaCloudWatch'].{ARN:Arn}"</span> --output text<span class="ph token variable">)</span></span>
+$ <span class="ph token keyword">if</span> <span class="ph token punctuation">[</span><span class="ph token punctuation">[</span> -z <span class="ph token string">"<span class="ph token variable">${POLICY_ARN}</span>"</span> <span class="ph token punctuation">]</span><span class="ph token punctuation">]</span><span class="ph token punctuation">;</span> <span class="ph token keyword">then</span>
+<span class="ph token function">cat</span> <span class="ph token operator">&lt;&lt;</span> EOF <span class="ph token operator">&gt;</span> <span class="ph token variable">${SCRATCH}</span>/policy.json
+<span class="ph token punctuation">{</span>
+  <span class="ph token string">"Version"</span><span class="ph token builtin class-name">:</span> <span class="ph token string">"2012-10-17"</span>,
+  <span class="ph token string">"Statement"</span><span class="ph token builtin class-name">:</span> <span class="ph token punctuation">[</span>
+     <span class="ph token punctuation">{</span>
+           <span class="ph token string">"Effect"</span><span class="ph token builtin class-name">:</span> <span class="ph token string">"Allow"</span>,
+           <span class="ph token string">"Action"</span><span class="ph token builtin class-name">:</span> <span class="ph token punctuation">[</span>
+              <span class="ph token string">"logs:CreateLogGroup"</span>,
+              <span class="ph token string">"logs:CreateLogStream"</span>,
+              <span class="ph token string">"logs:DescribeLogGroups"</span>,
+              <span class="ph token string">"logs:DescribeLogStreams"</span>,
+              <span class="ph token string">"logs:PutLogEvents"</span>,
+              <span class="ph token string">"logs:PutRetentionPolicy"</span>
+           <span class="ph token punctuation">]</span>,
+           <span class="ph token string">"Resource"</span><span class="ph token builtin class-name">:</span> <span class="ph token string">"arn:aws:logs:*:*:*"</span>
+     <span class="ph token punctuation">}</span>
+<span class="ph token punctuation">]</span>
+<span class="ph token punctuation">}</span>
+EOF
+<span class="ph token assign-left variable">POLICY_ARN</span><span class="ph token operator">=</span><span class="ph token variable"><span class="ph token variable">$(</span>aws iam create-policy --policy-name <span class="ph token string">"RosaCloudWatch"</span> <span class="ph token punctuation">\</span>
+--policy-document file:///$<span class="ph token punctuation">{</span>SCRATCH<span class="ph token punctuation">}</span>/policy.json --query Policy.Arn --output text<span class="ph token variable">)</span></span>
+<span class="ph token keyword">fi</span>
+$ <span class="ph token builtin class-name">echo</span> <span class="ph token variable">${POLICY_ARN}</span>
+</code></pre>
+
+
+<pre class="pre codeblock language-json"><code>
+
+</code></pre>
+
+<pre class="pre codeblock"><code>name: </code></pre>
+<ol class="ol">
+    <li class="li">the mame is used for....</li>
+</ol>
+
+
+<figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 2. </span><span class="keyword">Red Hat OpenShift Service on AWS</span> Documentation</figcaption>
+
+<img class="image" src="../images/291_OpenShift_on_AWS_Intro_1122_docs.png">
+</figure>
+
+<p class="p">To navigate the ROSA documentation, use the left navigation bar.</p>
+</div>
+
+</article></main></body></html>

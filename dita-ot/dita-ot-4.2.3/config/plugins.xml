@@ -25,7 +25,9 @@
   <template file="build_dita2eclipsehelp_template.xml"/>
   <template file="xsl/map2eclipse_template.xsl"/>
   <template file="xsl/map2plugin_template.xsl"/>
-</plugin><plugin id="org.dita.pdf2.axf" version="3.6.1" xml:base="../plugins/org.dita.pdf2.axf/plugin.xml">
+</plugin><plugin id="org.dita.specialization.dita11" version="1.1" xml:base="../plugins/org.dita.specialization.dita11/plugin.xml">
+        <feature extension="dita.specialization.catalog.relative" file="catalog.xml"/>
+    </plugin><plugin id="org.dita.pdf2.axf" version="3.6.1" xml:base="../plugins/org.dita.pdf2.axf/plugin.xml">
   <require plugin="org.dita.pdf2"/>
   <!-- extensions -->
   <feature extension="depend.org.dita.pdf2.init.pre" value="transform.fo2pdf.ah.init"/>
@@ -45,9 +47,7 @@
   <feature extension="ant.import" file="build.xml"/>
   <feature extension="dita.conductor.pdf2.formatter.check" value="ah"/>
   <template file="xsl/fo/topic2fo_shell_axf_template.xsl"/>
-</plugin><plugin id="org.dita.specialization.dita11" version="1.1" xml:base="../plugins/org.dita.specialization.dita11/plugin.xml">
-        <feature extension="dita.specialization.catalog.relative" file="catalog.xml"/>
-    </plugin><plugin id="org.dita.htmlhelp" version="4.2.3" xml:base="../plugins/org.dita.htmlhelp/plugin.xml">
+</plugin><plugin id="org.dita.htmlhelp" version="4.2.3" xml:base="../plugins/org.dita.htmlhelp/plugin.xml">
   <!-- extension points -->
   <extension-point id="dita.xsl.htmlhelp.map2hhp" name="HTML Help project XSLT import"/>
   <extension-point id="dita.xsl.htmlhelp.map2hhc" name="HTML Help content XSLT import"/>
@@ -62,6 +62,8 @@
   <template file="xsl/map2hhc_template.xsl"/>
   <template file="xsl/map2hhp_template.xsl"/>
   <template file="build_dita2htmlhelp_template.xml"/>
+</plugin><plugin id="org.oasis-open.dita.v1_3" version="1.3" xml:base="../plugins/org.oasis-open.dita.v1_3/plugin.xml">
+  <feature extension="dita.specialization.catalog.relative" file="catalog.xml"/>
 </plugin><plugin id="com.elovirta.pdf" version="0.7.2" xml:base="../plugins/com.elovirta.pdf/plugin.xml">
   <feature extension="dita.conductor.lib.import" file="lib/pdf-generator-0.7.2.jar"/>
   <feature extension="ant.import" file="build.xml"/>
@@ -71,10 +73,6 @@
   <!--<feature extension="depend.org.dita.pdf2.init.pre" value="com.elovirta.pdf.generate"/>-->
   <!-- XXX: This is a hack because we don't have an extension point in PDF2 that is early enough. -->
   <feature extension="depend.preprocess.post" value="com.elovirta.pdf.generate"/>
-</plugin><plugin id="org.oasis-open.dita.v1_3" version="1.3" xml:base="../plugins/org.oasis-open.dita.v1_3/plugin.xml">
-  <feature extension="dita.specialization.catalog.relative" file="catalog.xml"/>
-</plugin><plugin id="org.oasis-open.dita.techcomm.v2_0" version="0.0.0" xml:base="../plugins/org.oasis-open.dita.techcomm.v2_0/plugin.xml">
-  <feature extension="dita.specialization.catalog.relative" file="catalog.xml"/>
 </plugin><plugin id="org.dita.html5" version="4.2.3" xml:base="../plugins/org.dita.html5/plugin.xml">
   <!-- extension points -->
   <extension-point id="dita.xsl.html5" name="HTML5 XSLT import"/>
@@ -143,6 +141,8 @@
   <template file="build_dita2html5_template.xml"/>
   <template file="xsl/dita2html5Impl_template.xsl"/>
   <template file="xsl/map2html5-coverImpl_template.xsl"/>
+</plugin><plugin id="org.oasis-open.dita.techcomm.v2_0" version="0.0.0" xml:base="../plugins/org.oasis-open.dita.techcomm.v2_0/plugin.xml">
+  <feature extension="dita.specialization.catalog.relative" file="catalog.xml"/>
 </plugin><plugin id="org.dita.pdf2.xep" version="3.6.3" xml:base="../plugins/org.dita.pdf2.xep/plugin.xml">
   <require plugin="org.dita.pdf2"/>
   <!-- extensions -->
@@ -161,6 +161,31 @@
   <feature extension="dita.xsl.messages" file="resource/messages.xml"/>
   <feature extension="dita.conductor.pdf2.formatter.check" value="xep"/>
   <template file="xsl/fo/topic2fo_shell_xep_template.xsl"/>
+</plugin><plugin id="org.dita.pdf2.fop" version="4.2.3" xml:base="../plugins/org.dita.pdf2.fop/plugin.xml">
+  <require plugin="org.dita.pdf2"/>
+  <!-- extensions -->
+  <feature extension="depend.org.dita.pdf2.init.pre" value="transform.fo2pdf.fop.init"/>
+  <feature extension="depend.org.dita.pdf2.format" value="transform.fo2pdf.fop"/>
+  <feature extension="dita.conductor.lib.import" file="lib/batik-all-1.17.jar"/>
+  <feature extension="dita.conductor.lib.import" file="lib/fontbox-2.0.28.jar"/>
+  <feature extension="dita.conductor.lib.import" file="lib/fop-core-2.9.jar"/>
+  <feature extension="dita.conductor.lib.import" file="lib/fop-events-2.9.jar"/>
+  <feature extension="dita.conductor.lib.import" file="lib/fop-pdf-images-2.9.jar"/>
+  <feature extension="dita.conductor.lib.import" file="lib/fop-util-2.9.jar"/>
+  <feature extension="dita.conductor.lib.import" file="lib/jcl-over-slf4j-2.0.7.jar"/>
+  <feature extension="dita.conductor.lib.import" file="lib/pdfbox-2.0.28.jar"/>
+  <feature extension="dita.conductor.lib.import" file="lib/slf4j-api-2.0.7.jar"/>
+  <feature extension="dita.conductor.lib.import" file="lib/xml-apis-ext-1.3.04.jar"/>
+  <feature extension="dita.conductor.lib.import" file="lib/xmlgraphics-commons-2.9.jar"/>
+  <transtype desc="PDF" name="pdf">
+    <param desc="Specifies the XSL processor." name="pdf.formatter" type="enum">
+      <val default="true" desc="Apache FOP">fop</val>
+    </param>
+    <param desc="Specifies the user configuration file for FOP." name="args.fo.userconfig" type="file"/>
+  </transtype>
+  <feature extension="dita.conductor.pdf2.formatter.check" value="fop"/>
+  <feature extension="ant.import" file="build_fop.xml"/>
+  <template file="xsl/fo/topic2fo_shell_fop_template.xsl"/>
 </plugin><plugin id="org.dita.xhtml" version="4.2.3" xml:base="../plugins/org.dita.xhtml/plugin.xml">
   <!-- extension points -->
   <extension-point id="dita.xsl.xhtml" name="HTML/XHTML XSLT import"/>
@@ -225,31 +250,6 @@
   <template file="xsl/dita2html-base_template.xsl"/>
   <template file="xsl/map2htmltoc_template.xsl"/>
   <template file="xsl/map2html-coverImpl_template.xsl"/>
-</plugin><plugin id="org.dita.pdf2.fop" version="4.2.3" xml:base="../plugins/org.dita.pdf2.fop/plugin.xml">
-  <require plugin="org.dita.pdf2"/>
-  <!-- extensions -->
-  <feature extension="depend.org.dita.pdf2.init.pre" value="transform.fo2pdf.fop.init"/>
-  <feature extension="depend.org.dita.pdf2.format" value="transform.fo2pdf.fop"/>
-  <feature extension="dita.conductor.lib.import" file="lib/batik-all-1.17.jar"/>
-  <feature extension="dita.conductor.lib.import" file="lib/fontbox-2.0.28.jar"/>
-  <feature extension="dita.conductor.lib.import" file="lib/fop-core-2.9.jar"/>
-  <feature extension="dita.conductor.lib.import" file="lib/fop-events-2.9.jar"/>
-  <feature extension="dita.conductor.lib.import" file="lib/fop-pdf-images-2.9.jar"/>
-  <feature extension="dita.conductor.lib.import" file="lib/fop-util-2.9.jar"/>
-  <feature extension="dita.conductor.lib.import" file="lib/jcl-over-slf4j-2.0.7.jar"/>
-  <feature extension="dita.conductor.lib.import" file="lib/pdfbox-2.0.28.jar"/>
-  <feature extension="dita.conductor.lib.import" file="lib/slf4j-api-2.0.7.jar"/>
-  <feature extension="dita.conductor.lib.import" file="lib/xml-apis-ext-1.3.04.jar"/>
-  <feature extension="dita.conductor.lib.import" file="lib/xmlgraphics-commons-2.9.jar"/>
-  <transtype desc="PDF" name="pdf">
-    <param desc="Specifies the XSL processor." name="pdf.formatter" type="enum">
-      <val default="true" desc="Apache FOP">fop</val>
-    </param>
-    <param desc="Specifies the user configuration file for FOP." name="args.fo.userconfig" type="file"/>
-  </transtype>
-  <feature extension="dita.conductor.pdf2.formatter.check" value="fop"/>
-  <feature extension="ant.import" file="build_fop.xml"/>
-  <template file="xsl/fo/topic2fo_shell_fop_template.xsl"/>
 </plugin><plugin id="org.oasis-open.xdita.v0_3_0" version="0.3.2" xml:base="../plugins/org.oasis-open.xdita.v0_3_0/plugin.xml">
 <title>Lightweight DITA</title>
 
@@ -343,18 +343,6 @@ public IDs and system IDs for any DTD modules included in this plugin. -->
   <template file="xsl/fo/i18n-postprocess_template.xsl"/>
   <template file="xsl/fo/topic2fo_shell_template.xsl"/>
   <template file="xsl/common/topicmerge_template.xsl"/>
-</plugin><plugin id="org.dita.normalize" version="2.0.0" xml:base="../plugins/org.dita.normalize/plugin.xml">
-  <transtype desc="Normalized DITA" name="dita">
-    <param desc="Remove key artefacts after key resolution." name="normalize-strip-keyref" type="enum">
-      <val default="true">yes</val>
-      <val>no</val>
-    </param>
-    <param desc="Remove branch filter artefacts after branch filter resolution." name="normalize-strip-branch-filter" type="enum">
-      <val default="true">yes</val>
-      <val>no</val>
-    </param>
-  </transtype>
-  <feature extension="dita.conductor.target.relative" file="conductor.xml"/>
 </plugin><plugin id="org.dita.base" version="4.2.3" xml:base="../plugins/org.dita.base/plugin.xml">
   <!-- base extension points -->
   <extension-point id="package.version" name="Plug-in version"/>
@@ -623,6 +611,18 @@ public IDs and system IDs for any DTD modules included in this plugin. -->
   <template file="xsl/preprocess/conref_template.xsl"/>
   <template file="xsl/preprocess/map-conref_template.xsl"/>
   <template file="xsl/preprocess/topicpull_template.xsl"/>
+</plugin><plugin id="org.dita.normalize" version="2.0.0" xml:base="../plugins/org.dita.normalize/plugin.xml">
+  <transtype desc="Normalized DITA" name="dita">
+    <param desc="Remove key artefacts after key resolution." name="normalize-strip-keyref" type="enum">
+      <val default="true">yes</val>
+      <val>no</val>
+    </param>
+    <param desc="Remove branch filter artefacts after branch filter resolution." name="normalize-strip-branch-filter" type="enum">
+      <val default="true">yes</val>
+      <val>no</val>
+    </param>
+  </transtype>
+  <feature extension="dita.conductor.target.relative" file="conductor.xml"/>
 </plugin><plugin id="org.oasis-open.dita.v1_2" version="1.2" xml:base="../plugins/org.oasis-open.dita.v1_2/plugin.xml">
   <feature extension="dita.specialization.catalog.relative" file="catalog.xml"/>
 </plugin><plugin id="org.dita.index" version="1.0.0" xml:base="../plugins/org.dita.index/plugin.xml">

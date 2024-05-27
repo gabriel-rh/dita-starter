@@ -12,11 +12,7 @@
 
 <p>Welcome to the official <keyword keyref="product-title"/> (ROSA) documentation, where you can learn about ROSA and start exploring its features. To learn about ROSA, interacting with ROSA by using <keyword keyref="cluster-manager-first"/> and command-line interface (CLI) tools, consumption experience, and integration with Amazon Web Services (AWS) services, start with <xref keyref="rosa-understanding"/>.</p>
 
-<fig><title>test.js</title>
-<codeblock outputclass="language-javascript">let i=1;
-i++;
-</codeblock>
-</fig>
+
 
 
 <codeblock  outputclass="language-bash">$ export ROSA_CLUSTER_NAME=$(oc get infrastructure cluster -o=jsonpath="{.status.infrastructureName}"  | sed 's/-[a-z0-9]\{5\}$//')

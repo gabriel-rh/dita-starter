@@ -32,3 +32,8 @@ python3 -m http.server -d output/
 
 ./dita-ot/dita-ot-4.2.3/bin/dita -i input/openshift-docs/openshift-enterprise-modular.ditamap -o ./output/openshift-docs/ -f html5 --nav-toc=full
 ```
+
+```
+./dita-ot/dita-ot-4.2.3/bin/dita uninstall fox.jason.prismjs
+
+```

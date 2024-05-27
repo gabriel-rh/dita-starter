@@ -1,7 +1,6 @@
 set "CLASSPATH=%CLASSPATH%;%DITA_HOME%\plugins\org.dita.htmlhelp\lib\htmlhelp.jar"
 set "CLASSPATH=%CLASSPATH%;%DITA_HOME%\plugins\org.dita.pdf2\lib\fo.jar"
 set "CLASSPATH=%CLASSPATH%;%DITA_HOME%\plugins\com.elovirta.pdf\lib\pdf-generator-0.7.2.jar"
-set "CLASSPATH=%CLASSPATH%;%DITA_HOME%\plugins\fox.jason.prismjs\lib\prismjs-1.5.jar"
 set "CLASSPATH=%CLASSPATH%;%DITA_HOME%\plugins\org.dita.eclipsehelp\lib\eclipsehelp.jar"
 set "CLASSPATH=%CLASSPATH%;%DITA_HOME%\plugins\org.dita.index\lib\index.jar"
 set "CLASSPATH=%CLASSPATH%;%DITA_HOME%\plugins\org.dita.pdf2.axf\lib\axf.jar"

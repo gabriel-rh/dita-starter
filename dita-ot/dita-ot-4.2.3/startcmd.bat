@@ -43,7 +43,6 @@ set CLASSPATH=%DITA_DIR%lib\xmlresolver-5.2.3.jar;%CLASSPATH%
 set CLASSPATH=%DITA_DIR%plugins\org.dita.htmlhelp\lib\htmlhelp.jar;%CLASSPATH%
 set CLASSPATH=%DITA_DIR%plugins\org.dita.pdf2\lib\fo.jar;%CLASSPATH%
 set CLASSPATH=%DITA_DIR%plugins\com.elovirta.pdf\lib\pdf-generator-0.7.2.jar;%CLASSPATH%
-set CLASSPATH=%DITA_DIR%plugins\fox.jason.prismjs\lib\prismjs-1.5.jar;%CLASSPATH%
 set CLASSPATH=%DITA_DIR%plugins\org.dita.eclipsehelp\lib\eclipsehelp.jar;%CLASSPATH%
 set CLASSPATH=%DITA_DIR%plugins\org.dita.index\lib\index.jar;%CLASSPATH%
 set CLASSPATH=%DITA_DIR%plugins\org.dita.pdf2.axf\lib\axf.jar;%CLASSPATH%

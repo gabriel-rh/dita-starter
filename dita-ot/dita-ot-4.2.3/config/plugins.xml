@@ -638,58 +638,6 @@ public IDs and system IDs for any DTD modules included in this plugin. -->
   </transtype>
 </plugin><plugin id="org.oasis-open.dita.v2_0" version="0.0.0" xml:base="../plugins/org.oasis-open.dita.v2_0/plugin.xml">
   <feature extension="dita.specialization.catalog.relative" file="catalog.xml"/>
-</plugin><plugin id="fox.jason.extend.css" version="1.3.0" xml:base="../plugins/fox.jason.extend.css/plugin.xml">
-	<feature extension="ant.import" file="process_css_extend.xml"/>
-	<!-- HTML5 extension points -->   
-	<feature extension="dita.xsl.html5" type="file" value="xsl/xhtml.xsl"/>
-	<!-- XHTML extension points -->
-	<feature extension="dita.xsl.xhtml" type="file" value="xsl/xhtml.xsl"/>
-	<!-- Uses the default depend.preprocess.post extension point -->
-	<feature extension="depend.preprocess.post" value="extend.css"/>
-	<!-- Offers three additional extension points for dependent plug-ins -->
-	<extension-point id="extend.css.process.pre" name="Custom CSS pre-processing"/>
-	<extension-point id="extend.css.process" name="Custom CSS processing"/>
-	<extension-point id="extend.css.process.post" name="Custom CSS post-processing"/>
-	<!-- Add a template file to enable overrides to use extension points -->
-	<template file="process_css_extend_template.xml"/>
-</plugin><plugin id="fox.jason.prismjs" version="4.1.0" xml:base="../plugins/fox.jason.prismjs/plugin.xml">
-  <feature extension="dita.conductor.lib.import" file="lib/prismjs-1.5.jar"/>
-  <feature extension="ant.import" file="process_prismjs.xml"/>
-  <!-- Ensure the plugin's error and logging messages are available -->
-  <feature extension="dita.xsl.messages" file="resource/messages.xml"/>
-  <!--
-  This plugin requires extended CSS
-  -->
-  <require plugin="fox.jason.extend.css"/>
-  
-  <!-- PDF extension point -->
-  <feature extension="dita.xsl.xslfo" type="file" value="xsl/xslfo.xsl"/>
-
-  <!-- HTML5 extension points -->   
-  <feature extension="dita.xsl.html5" type="file" value="xsl/line-numbers.xsl"/>
-  <!-- XHTML extension points -->
-  <feature extension="dita.xsl.xhtml" type="file" value="xsl/line-numbers.xsl"/>
-
-
-  <!-- Uses the default preprocess.pre and post extension points -->
-  <feature extension="depend.preprocess.pre" value="prismjs.init"/>
-  <feature extension="depend.preprocess.post" value="prismjs"/>
-  <!-- Uses the extended CSS extension point -->
-  <feature extension="extend.css.process" value="prismjs.css.copy"/>
-
-
-  <transtype desc="PDF" name="pdf">
-      <param desc="Specifies the default Prism language" name="prism.default" type="string"/>
-    </transtype>
-    <transtype abstract="true" desc="HTML-based output" name="base-html">
-      <param desc="Specifies the location of a custom prism .css color theme file relative to the output directory." name="prism.css.theme" type="string"/>
-    <param desc="Specifies a default prism theme to use." name="prism.use.theme" type="string">
-    	<val desc="Theme based on Bootstrap 5 colors.">bootstrap</val>
-			<val default="true" desc="Default Prism.js theme">default</val>
-			<val desc="Theme based on solarized colors">solarized</val>
-    </param>
-      <param desc="Specifies the default Prism language" name="prism.default" type="string"/>
-  </transtype>
 </plugin><plugin id="org.lwdita" version="5.7.0" xml:base="../plugins/org.lwdita/plugin.xml">
   <!-- DITA to Markdown -->
   <transtype desc="Markdown" name="markdown"/>

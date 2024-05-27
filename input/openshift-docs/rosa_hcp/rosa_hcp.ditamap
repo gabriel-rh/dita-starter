@@ -1,0 +1,10 @@
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<map>
+  <title>ROSA HCP map</title>
+
+  <topicref href="rosa-hcp-sts-creating-a-cluster-quickly.dita" chunk="to-content">
+
+    <topicref href="rosa-hcp-vpc-terraform.dita"/>
+  </topicref> 
+
+</map>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="rosa-hcp-vpc-terraform">
+    <title>Creating a Virtual Private Cloud using Terraform</title>
+
+    <shortdesc>Terraform is a tool that allows you to create various resources using an established template. The following process uses the default options as required to create a ROSA with HCP cluster. For more information about using Terraform, see the additional resources.</shortdesc>
+ 
+    <taskbody>
+
+        <prereq>
+            <p outputclass="prerequisites">Prerequisites</p>
+            <ul>
+                <li>You have installed Terraform version 1.4.0 or newer on your machine.</li>
+                <li>You have installed Git on your machine.</li>
+            </ul>
+        </prereq>
+        
+        <steps>
+
+            <step>
+                <cmd>Open a shell prompt and clone the Terraform VPC repository by running the following command:</cmd>
+                <info><codeblock>$ git clone https://github.com/openshift-cs/terraform-vpc-example</codeblock></info>
+            </step>
+            <step><cmd>Navigate to the created directory by running the following command:</cmd>
+                <info><codeblock>$ cd terraform-vpc-example</codeblock></info>
+            </step>
+            <step><cmd>Initiate the Terraform file by running the following command:</cmd>
+                <info><codeblock>$ terraform init</codeblock></info>
+                <stepresult>A message confirming the initialization appears when this process completes.</stepresult>
+            </step>
+            <step><cmd>To build your VPC Terraform plan based on the existing Terraform template, run the plan command. You must include your AWS region. You can choose to specify a cluster name. A rosa.tfplan file is added to the hypershift-tf directory after the terraform plan completes. For more detailed options, see the Terraform VPC repository’s README file.</cmd>
+                <info><codeblock>$ terraform plan -out rosa.tfplan -var region=&lt;region></codeblock></info>
+            </step>
+            <step><cmd>Apply this plan file to build your VPC by running the following command:</cmd>
+                <info><codeblock>$ terraform apply rosa.tfplan</codeblock></info>
+                <substeps>
+                    <substep><cmd>You can capture the values of the Terraform-provisioned private, public, and machinepool subnet IDs as environment variables to use when creating your ROSA with HCP cluster by running the following commands:</cmd> 
+                    <info><codeblock>$ export SUBNET_IDS=$(terraform output -raw cluster-subnets-string)</codeblock></info>
+                    </substep>
+                    <substep><cmd>Verify that the variables were correctly set with the following command:</cmd>
+                    <info><codeblock>$ echo $SUBNET_IDS</codeblock>
+                    <fig>
+                        <title>Sample output</title>
+                        <codeblock>$ subnet-0a6a57e0f784171aa,subnet-078e84e5b10ecf5b0</codeblock>
+                    </fig>
+                    </info>
+                    
+                    </substep>
+                </substeps>
+            </step>
+        </steps>
+
+        <postreq>
+            <p outputclass="additional-resources">Additional resources</p>
+
+            <ul>
+                <li>See the Terraform VPC repository for a detailed list of all options available when customizing the VPC for your needs.</li>
+            </ul>
+
+        </postreq>
+
+    </taskbody>
+
+
+</task>

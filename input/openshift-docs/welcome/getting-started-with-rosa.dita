@@ -9,7 +9,7 @@
 
         <section><title>Architect</title>
         
-        <table frame="all" rowsep="1" colsep="1">
+        <table id="architecture-links" frame="all" rowsep="1" colsep="1">
         <title>Architecture links</title>
         <tgroup cols="3">
         <thead>

@@ -9,7 +9,7 @@
         <topicref href="index.dita" />
         <topicref href="about-hcp.dita" chunk="to-content" >
             <topicref href="key-features-of-rosa.dita" toc="no"/>
-            <topicref href="getting-started-with-rosa.dita" toc="no"/>
+            <topicref href="getting-started-with-rosa.dita" toc="no" keys="getting-started-with-rosa"/>
         </topicref>
     </topicref>
 

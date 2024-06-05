@@ -11,5 +11,35 @@
 
 </p>
 
+
+<!-- 
+[TIP]
+====
+AWS Security Token Service (STS) is the recommended credential mode for installing and interacting with clusters on Red Hat OpenShift Service on AWS (ROSA) because it provides enhanced security.
+====
+
+-->
+
+<!--
+<note id="rosa-sts">
+    AWS Security Token Service (STS) is the recommended credential mode for installing and interacting with clusters on Red Hat OpenShift Service on AWS (ROSA) because it provides enhanced security.
+</note>
+-->
+
+<note conref="../snippets/rosa-snippets.dita#rosa-snippets/rosa-sts"/>
+
+<note conkeyref="rosa-snippets/rosa-sts"/>
+
+<table conkeyref="getting-started-with-rosa/architecture-links" >
+<tgroup cols="3">
+<tbody>
+<row><entry/></row>    
+</tbody>    
+</tgroup>    
+</table>
+
+<section>
+<sectiondiv conref="../snippets/rosa-snippets.dita#rosa-snippets/about-node-selectors"/>
+</section>
 </conbody>
 </concept>

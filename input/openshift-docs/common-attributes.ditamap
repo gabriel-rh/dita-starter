@@ -24,4 +24,7 @@
     <!--<keydef keys="rosa-understanding" href="rosa_architecture/rosa-understanding.dita"/>-->
 
     <keydef keys="img_openshift-rosa-intro" href="images/291_OpenShift_on_AWS_Intro_1122_docs.png" />
+
+    <keydef keys="rosa-snippets" href="snippets/rosa-snippets.dita"/>
+
 </map>

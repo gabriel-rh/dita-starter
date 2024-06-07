@@ -41,5 +41,8 @@ AWS Security Token Service (STS) is the recommended credential mode for installi
 <section>
 <sectiondiv conref="../snippets/rosa-snippets.dita#rosa-snippets/about-node-selectors"/>
 </section>
+
+<div conkeyref="getting-started-with-rosa/architecture-table-div"/>
+
 </conbody>
 </concept>

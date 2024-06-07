@@ -9,6 +9,7 @@
 
         <section><title>Architect</title>
         
+            <div id="architecture-table-div">
         <table id="architecture-links" frame="all" rowsep="1" colsep="1">
         <title>Architecture links</title>
         <tgroup cols="3">
@@ -38,7 +39,7 @@
         </tbody>
         </tgroup>
         
-        </table>
+        </table></div>
         
         
         </section>

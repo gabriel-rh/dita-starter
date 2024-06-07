@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE val PUBLIC "-//OASIS//DTD DITA DITAVAL//EN" "ditaval.dtd">
+
+<val>
+
+<prop action="include" att="platform" val="nutanix"></prop>
+
+<prop action="exclude" att="platform" val="alibaba"></prop>
+
+
+
+</val>

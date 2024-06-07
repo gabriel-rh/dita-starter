@@ -1,6 +1,6 @@
 <!DOCTYPE html
   SYSTEM "about:legacy-compat">
-<html lang="en"><head><meta charset="UTF-8"><meta name="copyright" content="(C) Copyright 2024"><meta name="generator" content="DITA-OT"><title>Creating ROSA with HCP clusters using the default options</title><link rel="stylesheet" type="text/css" href="../commonltr.css"></head><body><nav class="toc" role="navigation"><ul><li><span>About</span><ul><li><a href="../welcome/index.html">Welcome</a></li><li><a href="../welcome/about-hcp.html#about-hcp">Learn more about ROSA with HCP</a><ul></ul></li></ul></li><li><span>Introduction to ROSA</span><ul><li><a href="../rosa_architecture/rosa-understanding.html">Understanding ROSA</a></li></ul></li><li class="active"><a href="../rosa_hcp/rosa-hcp-sts-creating-a-cluster-quickly.html#rosa-hcp-sts-creating-a-cluster-quickly">Creating ROSA with HCP clusters using the default options </a><ul><li><a href="../rosa_hcp/rosa-hcp-sts-creating-a-cluster-quickly.html#rosa-hcp-vpc-terraform">Creating a Virtual Private Cloud using Terraform</a></li></ul></li></ul></nav><main role="main"><article role="article" aria-labelledby="ariaid-title1"><article class="nested0" aria-labelledby="ariaid-title1" id="rosa-hcp-sts-creating-a-cluster-quickly">
+<html lang="en"><head><meta charset="UTF-8"><meta name="copyright" content="(C) Copyright 2024"><meta name="generator" content="DITA-OT"><title>Creating ROSA with HCP clusters using the default options</title><link rel="stylesheet" type="text/css" href="../commonltr.css"></head><body><nav class="toc" role="navigation"><ul><li><span>About</span><ul><li><a href="../welcome/index.html">Welcome</a></li><li><a href="../welcome/about-hcp.html#about-hcp">Learn more about ROSA with HCP</a><ul></ul></li></ul></li><li><span>Introduction to ROSA</span><ul><li><a href="../rosa_architecture/rosa-understanding.html">Understanding ROSA</a></li></ul></li><li class="active"><a href="../rosa_hcp/rosa-hcp-sts-creating-a-cluster-quickly.html#rosa-hcp-sts-creating-a-cluster-quickly">Creating ROSA with HCP clusters using the default options </a><ul><li><a href="../rosa_hcp/rosa-hcp-sts-creating-a-cluster-quickly.html#rosa-hcp-vpc-terraform">Creating a Virtual Private Cloud using Terraform</a></li></ul></li><li><span>Installing</span><ul><li><span>Installing on Alibaba</span><ul><li><a href="../installing/cco-ccoctl-configuring.html">Configuring the Cloud Credential Operator utility</a><ul></ul></li></ul></li><li><span>Installing on Nutanix</span><ul><li><a href="../installing/cco-ccoctl-configuring-1.html">Configuring the Cloud Credential Operator utility</a><ul></ul></li></ul></li></ul></li></ul></nav><main role="main"><article role="article" aria-labelledby="ariaid-title1"><article class="nested0" aria-labelledby="ariaid-title1" id="rosa-hcp-sts-creating-a-cluster-quickly">
 
 <h1 class="title topictitle1" id="ariaid-title1">Creating ROSA with HCP clusters using the default options </h1>
 
@@ -20,8 +20,53 @@
     <h2 class="title topictitle2" id="ariaid-title2">Creating a Virtual Private Cloud using Terraform</h2>
 
     
+ 
     <div class="body taskbody"><p class="shortdesc">Terraform is a tool that allows you to create various resources using an established template. The following process uses the default options as required to create a ROSA with HCP cluster. For more information about using Terraform, see the additional resources.</p>
 
+        <section class="section prereq">
+            <p class="p prerequisites">Prerequisites</p>
+            <ul class="ul">
+                <li class="li">You have installed Terraform version 1.4.0 or newer on your machine.</li>
+                <li class="li">You have installed Git on your machine.</li>
+            </ul>
+        </section>
+        
+        <section><ol class="ol steps"><li class="li step stepexpand">
+                <span class="ph cmd">Open a shell prompt and clone the Terraform VPC repository by running the following command:</span>
+                <div class="itemgroup info"><pre class="pre codeblock"><code>$ git clone https://github.com/openshift-cs/terraform-vpc-example</code></pre></div>
+            </li><li class="li step stepexpand"><span class="ph cmd">Navigate to the created directory by running the following command:</span>
+                <div class="itemgroup info"><pre class="pre codeblock"><code>$ cd terraform-vpc-example</code></pre></div>
+            </li><li class="li step stepexpand"><span class="ph cmd">Initiate the Terraform file by running the following command:</span>
+                <div class="itemgroup info"><pre class="pre codeblock"><code>$ terraform init</code></pre></div>
+                <div class="itemgroup stepresult">A message confirming the initialization appears when this process completes.</div>
+            </li><li class="li step stepexpand"><span class="ph cmd">To build your VPC Terraform plan based on the existing Terraform template, run the plan command. You must include your AWS region. You can choose to specify a cluster name. A rosa.tfplan file is added to the hypershift-tf directory after the terraform plan completes. For more detailed options, see the Terraform VPC repository’s README file.</span>
+                <div class="itemgroup info"><pre class="pre codeblock"><code>$ terraform plan -out rosa.tfplan -var region=&lt;region&gt;</code></pre></div>
+            </li><li class="li step stepexpand"><span class="ph cmd">Apply this plan file to build your VPC by running the following command:</span>
+                <div class="itemgroup info"><pre class="pre codeblock"><code>$ terraform apply rosa.tfplan</code></pre></div>
+                <ol type="a" class="ol substeps">
+                    <li class="li substep substepexpand"><span class="ph cmd">You can capture the values of the Terraform-provisioned private, public, and machinepool subnet IDs as environment variables to use when creating your ROSA with HCP cluster by running the following commands:</span> 
+                    <div class="itemgroup info"><pre class="pre codeblock"><code>$ export SUBNET_IDS=$(terraform output -raw cluster-subnets-string)</code></pre></div>
+                    </li>
+                    <li class="li substep substepexpand"><span class="ph cmd">Verify that the variables were correctly set with the following command:</span>
+                    <div class="itemgroup info"><pre class="pre codeblock"><code>$ echo $SUBNET_IDS</code></pre>
+                    <figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 1. </span>Sample output</figcaption>
+                        
+                        <pre class="pre codeblock"><code>$ subnet-0a6a57e0f784171aa,subnet-078e84e5b10ecf5b0</code></pre>
+                    </figure>
+                    </div>
+                    
+                    </li>
+                </ol>
+            </li></ol></section>
+
+        <section class="section postreq">
+            <p class="p additional-resources">Additional resources</p>
+
+            <ul class="ul">
+                <li class="li">See the Terraform VPC repository for a detailed list of all options available when customizing the VPC for your needs.</li>
+            </ul>
+
+        </section>
 
     </div>
 

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+
+<concept id="welcome-index">
+
+<title>Configuring the Cloud Credential Operator utility</title>
+
+<conbody>
+
+<p platform="alibaba">To assign RAM users and policies that provide long-term RAM AccessKeys (AKs) for each in-cluster component, extract and prepare the Cloud Credential Operator (CCO) utility (`ccoctl`) binary.</p>
+
+<p platform="nutanix">The Cloud Credential Operator (CCO) manages cloud provider credentials as Kubernetes custom resource definitions (CRDs). To install a cluster on Nutanix, you must set the CCO to `manual` mode as part of the installation process.</p>
+
+</conbody>
+</concept>

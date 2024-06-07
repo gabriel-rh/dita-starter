@@ -1,8 +1,12 @@
 {
-
+    "xml.fileAssociations": [
+        {
+            "pattern": "*.ditaval",
+            "systemId": "dita-ot/dita-ot-4.2.3/plugins/org.oasis-open.dita.v1_3/dtd/ditaval/dtd/ditaval.dtd"
+          },
+    ],
     "xml.catalogs": [
-        "/workspaces/dita-starter/dita-ot/dita-ot-4.2.3/plugins/org.oasis-open.dita.v1_3/dtd/base/catalog.xml",
-        "/workspaces/dita-starter/dita-ot/dita-ot-4.2.3/plugins/org.oasis-open.dita.v1_3/dtd/technicalContent/catalog.xml"
+        "dita-ot/dita-ot-4.2.3/plugins/org.oasis-open.dita.v1_3/dtd/catalog.xml"
     ],
     "xml.validation.resolveExternalEntities": true,
     "xml.server.vmargs": "-Djdk.xml.entityExpansionLimit=256000"

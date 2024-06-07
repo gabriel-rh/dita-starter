@@ -6,7 +6,8 @@
     <keydef keys="product-title">
         <topicmeta>
             <keywords>
-                <keyword>Red Hat OpenShift Service on AWS</keyword>
+                <keyword product="openshift-rosa">Red Hat OpenShift Service on AWS</keyword>
+                <keyword product="openshift-enterprise">OpenShift Container Platform</keyword>
             </keywords>
         </topicmeta>
     </keydef>

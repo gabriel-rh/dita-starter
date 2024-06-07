@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE val PUBLIC "-//OASIS//DTD DITA DITAVAL//EN" "ditaval.dtd">
+
+<val>
+
+<prop action="include" att="product" val="openshift-enterprise"></prop>
+
+<prop action="exclude" att="product" val="openshift-rosa"></prop>
+
+
+
+</val>

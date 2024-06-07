@@ -7,118 +7,28 @@
 
 <div class="body conbody">
 
+<section class="section">
+    <div class="sectiondiv">
+
 <p class="p">Welcome to the official <span class="keyword">Red Hat OpenShift Service on AWS</span> (ROSA) documentation, where you can learn about ROSA and start exploring its features. To learn about ROSA, interacting with ROSA by using <span class="keyword">Red Hat OpenShift Cluster Manager</span> and command-line interface (CLI) tools, consumption experience, and integration with Amazon Web Services (AWS) services, start with <a class="xref" href="../rosa_architecture/rosa-understanding.html">Understanding ROSA</a>.</p>
 
-<figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 1. </span>test.js</figcaption>
-<pre class="pre codeblock language-javascript"><code>let i=1;
-i++;
-</code></pre>
+<figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 1. </span><span class="keyword">Red Hat OpenShift Service on AWS</span> Documentation</figcaption>
+    
+    <img class="image" src="../images/291_OpenShift_on_AWS_Intro_1122_docs.png">
 </figure>
-
-
-<pre class="pre codeblock language-bash"><code>$ export ROSA_CLUSTER_NAME=$(oc get infrastructure cluster -o=jsonpath="{.status.infrastructureName}"  | sed 's/-[a-z0-9]\{5\}$//')
-$ export REGION=$(rosa describe cluster -c ${ROSA_CLUSTER_NAME} --output json | jq -r .region.id)
-$ export OIDC_ENDPOINT=$(oc get authentication.config.openshift.io cluster -o json | jq -r .spec.serviceAccountIssuer | sed  's|^https://||')
-$ export AWS_ACCOUNT_ID=`aws sts get-caller-identity --query Account --output text`
-$ export AWS_PAGER=""
-$ export SCRATCH="/tmp/${ROSA_CLUSTER_NAME}/clf-cloudwatch-sts"
-$ mkdir -p ${SCRATCH}
-</code></pre>
-
-<pre class="pre codeblock language-json show-line-numbers"><code>{
-    "logGroups": [
-        {
-            "logGroupName": "rosa-xxxx.audit",
-            "creationTime": 1661286368369,
-            "metricFilterCount": 0,
-            "arn": "arn:aws:logs:us-east-2:xxxx:log-group:rosa-xxxx.audit:*",
-            "storedBytes": 0
-        },
-        {
-            "logGroupName": "rosa-xxxx.infrastructure",
-            "creationTime": 1661286369821,
-            "metricFilterCount": 0,
-            "arn": "arn:aws:logs:us-east-2:xxxx:log-group:rosa-xxxx.infrastructure:*",
-            "storedBytes": 0
-        }
-    ]
-}
-</code></pre>
+</div>
 
 
 
-<pre class="pre codeblock language-bash"><code>$ POLICY_ARN=$(aws iam list-policies --query "Policies[?PolicyName=='RosaCloudWatch'].{ARN:Arn}" --output text)
-$ if [[ -z "${POLICY_ARN}" ]]; then
-cat &lt;&lt; EOF &gt; ${SCRATCH}/policy.json
-{
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Effect": "Allow",
-            "Action": [
-                "logs:CreateLogGroup",
-                "logs:CreateLogStream",
-                "logs:DescribeLogGroups",
-                "logs:DescribeLogStreams",
-                "logs:PutLogEvents",
-                "logs:PutRetentionPolicy"
-            ],
-            "Resource": "arn:aws:logs:*:*:*"
-        }
-    ]
-}
-EOF
-POLICY_ARN=$(aws iam create-policy --policy-name "RosaCloudWatch" \
---policy-document file:///${SCRATCH}/policy.json --query Policy.Arn --output text)
-fi
-$ echo ${POLICY_ARN}    
-</code></pre>
-
-<pre class="pre codeblock language-bash"><code>
-$ POLICY_ARN=$(aws iam list-policies --query "Policies[?PolicyName=='RosaCloudWatch'].{ARN:Arn}" --output text)
-$ if [[ -z "${POLICY_ARN}" ]]; then
-cat &lt;&lt; EOF &gt; ${SCRATCH}/policy.json
-{
-  "Version": "2012-10-17",
-  "Statement": [
-     {
-           "Effect": "Allow",
-           "Action": [
-              "logs:CreateLogGroup",
-              "logs:CreateLogStream",
-              "logs:DescribeLogGroups",
-              "logs:DescribeLogStreams",
-              "logs:PutLogEvents",
-              "logs:PutRetentionPolicy"
-           ],
-           "Resource": "arn:aws:logs:*:*:*"
-     }
-]
-}
-EOF
-POLICY_ARN=$(aws iam create-policy --policy-name "RosaCloudWatch" \
---policy-document file:///${SCRATCH}/policy.json --query Policy.Arn --output text)
-fi
-$ echo ${POLICY_ARN}
-</code></pre>
 
 
-<pre class="pre codeblock language-json"><code>
-
-</code></pre>
-
-<pre class="pre codeblock"><code>name: </code></pre>
-<ol class="ol">
-    <li class="li">the mame is used for....</li>
-</ol>
 
 
-<figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 2. </span><span class="keyword">Red Hat OpenShift Service on AWS</span> Documentation</figcaption>
 
-<img class="image" src="../images/291_OpenShift_on_AWS_Intro_1122_docs.png">
-</figure>
 
 <p class="p">To navigate the ROSA documentation, use the left navigation bar.</p>
+</section>
+
 </div>
 
 </article></main></body></html>

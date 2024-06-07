@@ -37,3 +37,14 @@ python3 -m http.server -d output/
 ./dita-ot/dita-ot-4.2.3/bin/dita uninstall fox.jason.prismjs
 
 ```
+
+## Ditavals
+
+```
+/workspaces/dita-starter (014-ditaval-conditionals) $ 
+
+./dita-ot/dita-ot-4.2.3/bin/dita -i input/openshift-docs/openshift-enterprise-modular.ditamap -o ./output/rosa/ -f html5 --nav-toc=full --filter=input/openshift-docs/ditavals/rosa.ditaval -v
+
+./dita-ot/dita-ot-4.2.3/bin/dita -i input/openshift-docs/openshift-enterprise-modular.ditamap -o ./output/openshift-docs/ -f html5 --nav-toc=full --filter=input/openshift-docs/ditavals/enterprise.ditaval -v
+
+```

@@ -12,4 +12,6 @@
     <topicref href="rosa_architecture/rosa_architecture.ditamap" format="ditamap"/>
 
     <topicref href="rosa_hcp/rosa_hcp.ditamap" format="ditamap"/>
+
+    <topicref href="installing/installing.ditamap" format="ditamap"/>
 </map>

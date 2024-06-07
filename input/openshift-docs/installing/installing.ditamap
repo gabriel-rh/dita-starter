@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+
+<map>
+
+    <title>Installing map</title>
+
+    <topicref navtitle="Installing">
+        <topicref navtitle="Installing on Alibaba">
+            <topicref href="cco-ccoctl-configuring.dita" >
+                <ditavalref href="../ditavals/alibaba.ditaval"/>
+            </topicref>
+        </topicref>
+        <topicref navtitle="Installing on Nutanix">
+            <topicref href="cco-ccoctl-configuring.dita" >
+                <ditavalref href="../ditavals/nutanix.ditaval"/>
+            </topicref>
+        </topicref>
+        
+    </topicref>
+</map>

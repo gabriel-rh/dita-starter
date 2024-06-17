@@ -11,6 +11,7 @@
             <topicref href="key-features-of-rosa.dita" toc="no"/>
             <topicref href="getting-started-with-rosa.dita" toc="no" keys="getting-started-with-rosa"/>
         </topicref>
+        <topicref href="test-markdown.md" format="markdown"/>
     </topicref>
 
 </map>

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic audience="novice" id="carrot" outputclass="juice">
+  <title>Topic title</title>
+  <prolog>
+    <author>Author One</author>
+    <author>Author Two</author>
+    <source>Source</source>
+    <publisher>Publisher</publisher>
+    <permissions view="Permissions" />
+    <metadata>
+      <audience type="Audience" />
+      <category>Category</category>
+      <keywords>
+        <keyword>Keyword1</keyword>
+        <keyword>Keyword2</keyword>
+      </keywords>
+    </metadata>
+    <resourceid appid="Resourceid1" />
+    <resourceid appid="Resourceid2" />
+    <data name="workflow" value="review" />
+  </prolog>
+  <body>
+    <p>First paragraph.</p>
+    <p>Second paragraph.</p>
+    <table>
+      <tgroup cols="3">
+        <colspec colname="col1" colnum="1" />
+        <colspec colname="col2" colnum="2" />
+        <colspec colname="col3" colnum="3" />
+        <thead>
+          <row>
+            <entry colname="col1">First Header</entry>
+            <entry align="center" colname="col2">Second Header</entry>
+            <entry align="right" colname="col3">Third Header</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry colname="col1">Content</entry>
+            <entry align="center" nameend="col3" namest="col2"><i>Long Cell</i></entry>
+          </row>
+          <row>
+            <entry colname="col1">Content</entry>
+            <entry align="center" colname="col2"><b>Cell</b></entry>
+            <entry align="right" colname="col3">Cell</entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+    <note type="note"><p>Note content.</p></note>
+    <note othertype="info" type="other"><p>Info content.</p></note>
+    <p><xref href="test.md">Markdown</xref>
+<xref href="test.dita">DITA</xref>
+<xref format="html"
+        href="test.html">HTML</xref>
+<xref format="html" href="http://www.example.com/test.html"
+        scope="external">External</xref></p>
+    <p>An inline <image href="test.jpg">
+        <alt>Alt</alt>
+      </image>.</p>
+    <image href="test.jpg" placement="break">
+      <alt>Alt</alt>
+    </image>
+    <fig>
+      <title>Title</title>
+      <image href="test.jpg">
+        <alt>Alt</alt>
+      </image>
+    </fig>
+    <p><b>bold</b>
+<i>italic</i>
+<codeph>code</codeph>
+<line-through>strikethrough</line-through></p>
+    <ul>
+      <li>one</li>
+      <li>two<ul>
+          <li>three</li>
+          <li>four</li>
+        </ul></li>
+    </ul>
+    <ol>
+      <li>one</li>
+      <li>two<ol>
+          <li>three</li>
+          <li>four</li>
+        </ol></li>
+    </ol>
+    <dl>
+      <dlentry>
+        <dt>Term</dt>
+        <dd><p>Definition.</p></dd>
+      </dlentry>
+    </dl>
+    <section id="section-title"><title>Section title</title></section>
+    <example id="example-title"><title>Example title</title></example>
+  </body>
+  <topic id="nested-topic-title">
+    <title>Nested topic title</title>
+    <body />
+  </topic>
+</topic>

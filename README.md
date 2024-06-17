@@ -48,3 +48,12 @@ python3 -m http.server -d output/
 ./dita-ot/dita-ot-4.2.3/bin/dita -i input/openshift-docs/openshift-enterprise-modular.ditamap -o ./output/openshift-docs/ -f html5 --nav-toc=full --filter=input/openshift-docs/ditavals/enterprise.ditaval -v
 
 ```
+
+## Markdown
+
+```
+./dita-ot/dita-ot-4.2.3/bin/dita -i input/openshift-docs/openshift-enterprise-modular.ditamap -o ./output-markdown/openshift-docs/ -f markdown --nav-toc=full --filter=input/openshift-docs/ditavals/enterprise.ditaval -v
+
+./dita-ot/dita-ot-4.2.3/bin/dita -i input/test/test-markdown.md -o output-dita/test -f dita
+
+```

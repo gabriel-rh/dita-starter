@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+
+<concept id="test-metadata">
+
+    <title>Sample concept</title>
+    <shortdesc>This content is a sample concept foro testing purposes</shortdesc>
+
+    <prolog>
+<author>Gabriel McG</author>
+<source>test source</source>
+<publisher>me</publisher>
+<copyright><copyryear year="2024" /><copyrholder>gabriel</copyrholder></copyright>
+<critdates><created date="2021" /><revised modified="2024" /></critdates>
+<permissions view="managers" />
+
+<metadata>
+    <audience type="beginners experts"/>
+    <category>Installing</category>
+    <category>Quick starts</category>
+    <keywords>
+        <keyword>aws</keyword>
+        <keyword>azure</keyword>
+    </keywords>
+</metadata>
+
+    </prolog>
+
+    <conbody>
+        
+        <p>Simple paragraph</p>
+
+        <ul>
+            <li>item 1</li>
+            <li>item 2</li>
+        </ul>
+    </conbody>
+
+</concept>

@@ -625,6 +625,8 @@ public IDs and system IDs for any DTD modules included in this plugin. -->
   <feature extension="dita.conductor.target.relative" file="conductor.xml"/>
 </plugin><plugin id="org.oasis-open.dita.v1_2" version="1.2" xml:base="../plugins/org.oasis-open.dita.v1_2/plugin.xml">
   <feature extension="dita.specialization.catalog.relative" file="catalog.xml"/>
+</plugin><plugin id="org.oasis-open.dita.v2_0" version="0.0.0" xml:base="../plugins/org.oasis-open.dita.v2_0/plugin.xml">
+  <feature extension="dita.specialization.catalog.relative" file="catalog.xml"/>
 </plugin><plugin id="org.dita.index" version="1.0.0" xml:base="../plugins/org.dita.index/plugin.xml">
   <feature extension="dita.conductor.lib.import" file="lib/index.jar"/>
   <feature extension="dita.xsl.messages" file="messages.xml"/>
@@ -636,8 +638,6 @@ public IDs and system IDs for any DTD modules included in this plugin. -->
       <val default="true">no</val>
     </param>
   </transtype>
-</plugin><plugin id="org.oasis-open.dita.v2_0" version="0.0.0" xml:base="../plugins/org.oasis-open.dita.v2_0/plugin.xml">
-  <feature extension="dita.specialization.catalog.relative" file="catalog.xml"/>
 </plugin><plugin id="org.lwdita" version="5.7.0" xml:base="../plugins/org.lwdita/plugin.xml">
   <!-- DITA to Markdown -->
   <transtype desc="Markdown" name="markdown"/>

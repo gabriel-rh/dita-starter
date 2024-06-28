@@ -5,7 +5,20 @@
 
     <title>Test map</title>
 
+    <topicmeta>
+
+        <metadata>
+            <audience type="map-beginners map-experts"/>
+            <category>Map Installing</category>
+            <category>Map Quick starts</category>
+            <keywords>
+                <keyword>map-aws</keyword>
+                <keyword>map-azure</keyword>
+            </keywords>
+        </metadata>  
+    </topicmeta>
+
     <topicref href="test-topic.dita" />
     <topicref href="test-concept.dita" />
-
+    <topicref href="test-metadata.dita"/>
 </map>

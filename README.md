@@ -48,3 +48,18 @@ python3 -m http.server -d output/
 ./dita-ot/dita-ot-4.2.3/bin/dita -i input/openshift-docs/openshift-enterprise-modular.ditamap -o ./output/openshift-docs/ -f html5 --nav-toc=full --filter=input/openshift-docs/ditavals/enterprise.ditaval -v
 
 ```
+
+
+## Metadata
+
+```
+
+./dita-ot/dita-ot-4.2.3/bin/dita -i input/test/test-metadata.dita -o output/test -f html5
+
+./dita-ot/dita-ot-4.2.3/bin/dita install https://github.com/jason-fox/fox.jason.open-graph/archive/master.zip
+
+./dita-ot/dita-ot-4.2.3/bin/dita -i input/test/test-map.ditamap -o output/test -f html5 -v --open-graph.url=www.example.com
+
+./dita-ot/dita-ot-4.2.3/bin/dita uninstall fox.jason.open-graph
+
+```

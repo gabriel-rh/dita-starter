@@ -5,6 +5,8 @@
 
     <title>OCP map</title>
 
+    <mapref href="metadata/ocpScheme.ditamap" type="subjectScheme"/>
+
     <mapref href="common-attributes.ditamap" />
 
     <mapref href="welcome/welcome.ditamap" />

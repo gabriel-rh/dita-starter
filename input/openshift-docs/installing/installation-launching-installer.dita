@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+
+<concept id="installation-launching-installer">
+
+<title>Deploying the cluster</title>
+
+<conbody>
+
+
+    <!-- 
+    ifdef::azure[]
+* You have an Azure subscription ID and tenant ID.
+endif::azure[]
+ifdef::azure-default[]
+* You have the application ID and password of a service principal.
+endif::azure-default[]
+ifdef::azure-gov,azure-private[]
+* If you are installing the cluster using a service principal, you have its application ID and password.
+* If you are installing the cluster using a system-assigned managed identity, you have enabled it on the virtual machine that you will run the installation program from.
+* If you are installing the cluster using a user-assigned managed identity, you have met these prerequisites:
+** You have its client ID.
+** You have assigned it to the virtual machine that you will run the installation program from.
+endif::azure-gov,azure-private[]
+    
+    -->
+    <ul>
+        <li>You have configured an account with the cloud platform that hosts your cluster.</li>
+
+        <li>You have the OpenShift Container Platform installation program and the pull secret for your cluster.</li>
+
+        <li platform="azure">You have an Azure subscription ID and tenant ID.</li>
+
+        <li platform="azure-default">You have the application ID and password of a service principal.</li>
+
+        <li platform="azure-gov azure-private">If you are installing the cluster using a service principal, you have its application ID and password.</li>
+
+        <li platform="azure-gov azure-private">If you are installing the cluster using a system-assigned managed identity, you have enabled it on the virtual machine that you will run the installation program from.</li>
+
+        <li platform="azure-gov azure-private">If you are installing the cluster using a user-assigned managed identity, you have met these prerequisites:
+
+            <ul>
+                <li>You have its client ID.</li>
+
+                <li>You have assigned it to the virtual machine that you will run the installation program from.</li>
+            </ul>
+        </li>
+
+    </ul>
+
+</conbody>
+
+</concept>

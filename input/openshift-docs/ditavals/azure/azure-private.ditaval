@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE val PUBLIC "-//OASIS//DTD DITA DITAVAL//EN" "ditaval.dtd">
+
+<val>
+
+<prop action="exclude" att="platform"></prop>
+
+<prop action="include" att="platform" val="azure-private"></prop>
+<prop action="include" att="platform" val="azure"></prop>
+
+</val>

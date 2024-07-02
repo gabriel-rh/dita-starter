@@ -1,0 +1,11 @@
+<!DOCTYPE subjectScheme PUBLIC "-//OASIS//DTD DITA Subject Scheme Map//EN" "dtd/subjectScheme.dtd">
+<subjectScheme>
+    <schemeref href="baseScheme.ditamap"/>
+
+    <enumerationdef>
+        <attributedef name="platform"/>
+        <subjectdef keyref="ocp-platforms"/>
+
+    </enumerationdef>
+
+</subjectScheme>

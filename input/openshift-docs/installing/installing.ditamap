@@ -17,5 +17,18 @@
             </topicref>
         </topicref>
         
+        <topicref navtitle="Installing on Azure">
+            <topicref navtitle="Installing a cluster quickly on Azure">
+                <topicref href="installation-launching-installer.dita">
+                    <ditavalref href="../ditavals/azure/azure-default.ditaval"/>
+                </topicref>
+            </topicref>
+
+            <topicref navtitle="Installing a private cluster on Azure">
+                <topicref href="installation-launching-installer.dita">
+                    <ditavalref href="../ditavals/azure/azure-private.ditaval"/>
+                </topicref>
+            </topicref>
+        </topicref>
     </topicref>
 </map>

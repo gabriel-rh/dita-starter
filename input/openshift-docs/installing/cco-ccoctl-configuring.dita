@@ -11,5 +11,7 @@
 
 <p platform="nutanix">The Cloud Credential Operator (CCO) manages cloud provider credentials as Kubernetes custom resource definitions (CRDs). To install a cluster on Nutanix, you must set the CCO to `manual` mode as part of the installation process.</p>
 
+<p platform="alibaba nutanix">common content to both</p>
+
 </conbody>
 </concept>

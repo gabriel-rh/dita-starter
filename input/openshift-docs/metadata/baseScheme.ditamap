@@ -1,0 +1,17 @@
+<!DOCTYPE subjectScheme PUBLIC "-//OASIS//DTD DITA Subject Scheme Map//EN" "dtd/subjectScheme.dtd">
+<subjectScheme>
+
+    <subjectdef keys="ocp-platforms">
+        <subjectdef keys="alibaba"/>
+        <subjectdef keys="nutanix"/>
+
+        <subjectdef keys="azureKeys">
+            <subjectdef keys="azure"/>
+            <subjectdef keys="azure-default"/>
+            <subjectdef keys="azure-private"/>
+            <subjectdef keys="azure-gov"/>
+        </subjectdef>
+
+    </subjectdef>
+
+</subjectScheme>
